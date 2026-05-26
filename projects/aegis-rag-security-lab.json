@@ -1,0 +1,25 @@
+{
+  "id": "aegis-rag-security-lab",
+  "title": "AEGIS RAG Security Lab",
+  "status": "active",
+  "category": "AI Security",
+  "summary": "Secure RAG architecture lab focused on retrieval design, prompt injection risk, governance, monitoring, and adversarial evaluation.",
+  "stack": ["Python", "RAG", "Semantic Retrieval", "Keyword Retrieval", "GraphRAG", "Security Controls", "Evaluation Harness"],
+  "architectureAreas": ["Retrieval architecture", "Prompt injection risk", "Trust boundaries", "Evaluation", "Monitoring", "Governance"],
+  "logs": [
+    {
+      "date": "2026-05-24",
+      "status": "completed",
+      "title": "Implemented baseline retrieval direction",
+      "details": "Established the first retrieval layer direction and separated baseline implementation from later threat modeling and security-control phases."
+    },
+    {
+      "date": "2026-05-25",
+      "status": "in progress",
+      "title": "Planning next retrieval and security architecture phase",
+      "details": "Reviewing retrieval methods, security risk separation, and how keyword, semantic, and graph retrieval layers affect attack surface and control design."
+    }
+  ],
+  "evidenceLinks": ["https://github.com/mcblast/aegis-rag-security-lab"],
+  "nextSteps": ["Document retrieval trust boundaries", "Expand phase notes", "Add security-focused evaluation cases"]
+}
