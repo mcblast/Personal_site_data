@@ -1,0 +1,31 @@
+{
+  "id": "personal-site-build-log",
+  "title": "Personal Site Build Log",
+  "status": "active",
+  "category": "Portfolio Architecture",
+  "summary": "The site itself as a proof of workflow: branch discipline, content architecture, dynamic data loading, and iterative delivery.",
+  "stack": ["HTML", "CSS", "JavaScript", "Netlify", "GitHub", "External JSON Data"],
+  "architectureAreas": ["Static frontend", "GitHub-backed content layer", "Project modal UI", "Branch workflow", "Deployment hygiene"],
+  "logs": [
+    {
+      "date": "2026-05-25",
+      "status": "completed",
+      "title": "Moved site from placeholder to multipage portfolio",
+      "details": "Replaced the under-construction page with a deliberate portfolio structure for home, projects, progress log, operating system, and contact."
+    },
+    {
+      "date": "2026-05-25",
+      "status": "completed",
+      "title": "Added logo and professional contact routing",
+      "details": "Updated the visual identity, wired the dedicated email address, and removed inconsistent placeholder contact copy."
+    },
+    {
+      "date": "2026-05-25",
+      "status": "in progress",
+      "title": "GitHub-backed project data architecture",
+      "details": "Separating project content from frontend code so project logs can be updated through a dedicated data repository without rebuilding the main site."
+    }
+  ],
+  "evidenceLinks": ["https://github.com/mcblast/Personal_Site", "https://github.com/mcblast/Personal_site_data"],
+  "nextSteps": ["Refine project modal UX", "Add more detailed project logs", "Prepare content for public portfolio review"]
+}
