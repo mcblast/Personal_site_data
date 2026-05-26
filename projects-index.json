@@ -1,0 +1,54 @@
+{
+  "version": "0.1.0",
+  "updated": "2026-05-25",
+  "projects": [
+    {
+      "id": "aegis-rag-security-lab",
+      "title": "AEGIS RAG Security Lab",
+      "category": "AI Security",
+      "status": "active",
+      "summary": "Secure RAG architecture lab focused on retrieval design, prompt injection risk, governance, monitoring, and adversarial evaluation.",
+      "dataUrl": "projects/aegis-rag-security-lab.json"
+    },
+    {
+      "id": "phishguard-ai",
+      "title": "PhishGuard AI",
+      "category": "Email Security",
+      "status": "active",
+      "summary": "AI-assisted anti-phishing pipeline with mailbox scanning, evidence extraction, triage scoring, routing, and audit logging.",
+      "dataUrl": "projects/phishguard-ai.json"
+    },
+    {
+      "id": "ed-ready",
+      "title": "Ed-ready Architecture Work",
+      "category": "Cloud Architecture",
+      "status": "active",
+      "summary": "Cloud-backed educational lab infrastructure and documentation alignment work focused on onboarding, stack comprehension, and architecture clarity.",
+      "dataUrl": "projects/ed-ready.json"
+    },
+    {
+      "id": "application-security-labs",
+      "title": "Application Security Labs",
+      "category": "Application Security",
+      "status": "archived",
+      "summary": "Hands-on application security work covering SQL injection, XSS, CSRF, fuzzing, Burp Suite workflows, exploit validation, and defensive explanation.",
+      "dataUrl": "projects/application-security-labs.json"
+    },
+    {
+      "id": "digital-forensics-workbench",
+      "title": "Digital Forensics Workbench",
+      "category": "Digital Forensics",
+      "status": "archived",
+      "summary": "Forensic analysis notes from VHD and IMG investigations using Autopsy, Sleuth Kit, Flare VM, evidence timelines, artifacts, and reporting discipline.",
+      "dataUrl": "projects/digital-forensics-workbench.json"
+    },
+    {
+      "id": "personal-site-build-log",
+      "title": "Personal Site Build Log",
+      "category": "Portfolio Architecture",
+      "status": "active",
+      "summary": "The site itself as a proof of workflow: branch discipline, content architecture, dynamic data loading, and iterative delivery.",
+      "dataUrl": "projects/personal-site-build-log.json"
+    }
+  ]
+}
