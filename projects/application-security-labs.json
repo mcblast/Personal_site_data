@@ -1,0 +1,25 @@
+{
+  "id": "application-security-labs",
+  "title": "Application Security Labs",
+  "status": "archived",
+  "category": "Application Security",
+  "summary": "Hands-on application security work covering SQL injection, XSS, CSRF, fuzzing, Burp Suite workflows, exploit validation, and defensive explanation.",
+  "stack": ["Burp Suite", "Docker", "ffuf", "Kali Linux", "MSSQL", "Web Security Testing"],
+  "architectureAreas": ["Attack surface discovery", "Input validation", "Session and request flow", "Exploit validation", "Defensive explanation"],
+  "logs": [
+    {
+      "date": "2025-07-02",
+      "status": "completed",
+      "title": "Active reconnaissance and exploitation lab work",
+      "details": "Used Burp Suite, Docker, and fuzzing tooling to practice application discovery, request analysis, and controlled exploitation workflows."
+    },
+    {
+      "date": "2025-08-22",
+      "status": "completed",
+      "title": "SQL injection lab reference established",
+      "details": "Documented SQL injection lab setup and used the lab instructions as a reference point for later application-security explanations."
+    }
+  ],
+  "evidenceLinks": [],
+  "nextSteps": ["Convert selected labs into professional writeups", "Add screenshots and sanitized evidence", "Separate attack mechanics from defensive lessons"]
+}
