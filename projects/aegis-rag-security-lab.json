@@ -4,22 +4,46 @@
   "status": "active",
   "category": "AI Security",
   "summary": "Secure RAG architecture lab focused on retrieval design, prompt injection risk, governance, monitoring, and adversarial evaluation.",
-  "stack": ["Python", "RAG", "Semantic Retrieval", "Keyword Retrieval", "GraphRAG", "Security Controls", "Evaluation Harness"],
-  "architectureAreas": ["Retrieval architecture", "Prompt injection risk", "Trust boundaries", "Evaluation", "Monitoring", "Governance"],
+  "stack": [
+    "Python",
+    "RAG",
+    "Keyword Retrieval",
+    "Semantic Retrieval",
+    "Local Embeddings",
+    "GraphRAG Planning",
+    "Security Controls",
+    "Evaluation Harness"
+  ],
+  "architectureAreas": [
+    "Retrieval architecture",
+    "Keyword-vs-semantic comparison",
+    "Prompt injection risk",
+    "Trust boundaries",
+    "Evaluation",
+    "Monitoring",
+    "Governance"
+  ],
   "logs": [
     {
       "date": "2026-05-24",
       "status": "completed",
-      "title": "Implemented baseline retrieval direction",
-      "details": "Established the first retrieval layer direction and separated baseline implementation from later threat modeling and security-control phases."
+      "title": "Merged Phase 01 and Phase 01.5 retrieval pipeline",
+      "details": "Integrated the baseline keyword RAG pipeline and Phase 01.5 semantic retrieval path into main, including local document ingestion, chunking, keyword retrieval, deterministic local embeddings, in-memory vector retrieval, comparison CLI tooling, pytest coverage, and phase documentation."
     },
     {
       "date": "2026-05-25",
       "status": "in progress",
-      "title": "Planning next retrieval and security architecture phase",
-      "details": "Reviewing retrieval methods, security risk separation, and how keyword, semantic, and graph retrieval layers affect attack surface and control design."
+      "title": "Documented planned Phase 01.75 GraphRAG architecture",
+      "details": "Outlined the next retrieval-architecture expansion: a local, deterministic GraphRAG path for comparing keyword retrieval, semantic retrieval, and relationship-aware retrieval before formal threat modeling begins."
     }
   ],
-  "evidenceLinks": ["https://github.com/mcblast/aegis-rag-security-lab"],
-  "nextSteps": ["Document retrieval trust boundaries", "Expand phase notes", "Add security-focused evaluation cases"]
+  "evidenceLinks": [
+    "https://github.com/mcblast/aegis-rag-security-lab/pull/1",
+    "https://github.com/mcblast/aegis-rag-security-lab/commit/0706d18fd96dbbaeeb2f3f96d3912337378824a0"
+  ],
+  "nextSteps": [
+    "Document retrieval trust boundaries",
+    "Expand Phase 01.75 GraphRAG notes",
+    "Add security-focused evaluation cases"
+  ]
 }
