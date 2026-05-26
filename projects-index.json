@@ -27,6 +27,14 @@
       "dataUrl": "projects/ed-ready.json"
     },
     {
+      "id": "reverse-engineering-malware-analysis",
+      "title": "Reverse Engineering & Analysis Labs",
+      "category": "Reverse Engineering",
+      "status": "archived",
+      "summary": "Archived lab series covering static and dynamic analysis, reverse engineering workflow, behavioral observation, indicator extraction, and professional reporting using Flare VM and Ghidra.",
+      "dataUrl": "projects/reverse-engineering-malware-analysis.json"
+    },
+    {
       "id": "application-security-labs",
       "title": "Application Security Labs",
       "category": "Application Security",
