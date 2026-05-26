@@ -1,0 +1,182 @@
+{
+  "version": "0.1.0",
+  "updated": "2026-05-25",
+  "entries": [
+    {
+      "date": "2026-05-25",
+      "category": "Portfolio Architecture",
+      "title": "Implemented GitHub-backed project content architecture",
+      "summary": "Separated project content from the static site by creating a dedicated data repository and wiring the Projects page to render project cards and modal case files from external JSON.",
+      "details": [
+        "Created structured project index and per-project JSON files in Personal_site_data.",
+        "Added dynamic project rendering to the frontend through projects.js.",
+        "Built styled project modals with status badges, stack tags, architecture areas, dated logs, evidence links, and next steps."
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "category": "Portfolio UX",
+      "title": "Refined project modal behavior and audience-facing copy",
+      "summary": "Adjusted the Projects page so project details read like professional case files for recruiters, interviewers, collaborators, and clients rather than internal build notes.",
+      "details": [
+        "Removed visitor-facing implementation details about the data flow.",
+        "Changed the modal scroll model so the full project case file scrolls as one page.",
+        "Kept active and archived project states visible through status badges."
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "category": "Personal Site",
+      "title": "Converted the personal site from placeholder to multipage portfolio",
+      "summary": "Replaced the under-construction page with a designed portfolio structure focused on archived competence, technical projects, progress logs, operating principles, and contact flow.",
+      "details": [
+        "Built separate pages for Home, Projects, Progress Log, Operating System, and Contact.",
+        "Kept main protected while working on the portfolio-archive-v1 branch.",
+        "Established the site as a professional footprint rather than a student-style assignment archive."
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "category": "Personal Site",
+      "title": "Updated branding, logo, and contact routing",
+      "summary": "Added the business logo, wired the professional email address, corrected inconsistent contact copy, and removed clickable behavior from the logo/name brand area.",
+      "details": [
+        "Added Business Logo.png to the site branch and styled it into the navigation brand area.",
+        "Updated contact routing to use kal@ninov.dev across homepage and contact page.",
+        "Made the logo/name static across the site to avoid unwanted navigation behavior."
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "category": "AEGIS RAG Security Lab",
+      "title": "Reviewed retrieval architecture from a security perspective",
+      "summary": "Analyzed how keyword retrieval, semantic retrieval, and GraphRAG change the risk profile of a RAG system and what security coverage remains incomplete.",
+      "details": [
+        "Compared retrieval layers by their different exposure to poisoning, prompt injection, trust boundary confusion, and context manipulation.",
+        "Identified that multiple retrieval methods improve coverage but do not automatically solve authorization, provenance, evaluation, or output-control risks.",
+        "Prepared the next phase around retrieval-layer threat modeling and control design."
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "category": "AEGIS RAG Security Lab",
+      "title": "Prepared next implementation phase for secure RAG work",
+      "summary": "Reviewed the current state of the RAG lab and prepared the direction for the next phase of implementation, study, and documentation.",
+      "details": [
+        "Kept the branch-per-phase workflow intact.",
+        "Prioritized baseline implementation clarity before adding advanced controls.",
+        "Focused the next phase on architectural reasoning, not just code generation."
+      ]
+    },
+    {
+      "date": "2026-05-24",
+      "category": "Professional Positioning",
+      "title": "Turned LinkedIn and GitHub activity into archived competence strategy",
+      "summary": "Clarified the role of public technical work as a durable evidence trail for recruiters, mentors, and future technical interviews.",
+      "details": [
+        "Framed public posts and repository work as long-term signal rather than short-term validation metrics.",
+        "Reviewed how GitHub commits, project docs, and LinkedIn updates compound into credibility over time.",
+        "Separated visible progress from vanity engagement. Tiny but important."
+      ]
+    },
+    {
+      "date": "2026-05-23",
+      "category": "Ed-ready Architecture",
+      "title": "Started deeper technical orientation around Ed-ready architecture",
+      "summary": "Reviewed the technical stack and began organizing the system into learnable architecture domains for onboarding and future documentation work.",
+      "details": [
+        "Identified Nuxt, AWS, S3, IAM, containers, Guacamole, Socket.IO, and frontend flow as key areas to understand.",
+        "Positioned the work as architecture comprehension and documentation alignment rather than surface-level repo cleanup.",
+        "Prepared the path for a structured documentation audit."
+      ]
+    },
+    {
+      "date": "2026-05-23",
+      "category": "Ed-ready Architecture",
+      "title": "Created direction for a 10-day technical onboarding architecture",
+      "summary": "Structured a learning path for understanding the Ed-ready codebase and technical stack in a way that supports useful contribution and architecture discussion.",
+      "details": [
+        "Mapped the stack into domains: frontend, cloud services, storage, identity, lab delivery, and system communication.",
+        "Focused the onboarding plan on producing practical understanding instead of passive reading.",
+        "Aligned the work with mentor expectations around clarity, initiative, and technical depth."
+      ]
+    },
+    {
+      "date": "2026-05-22",
+      "category": "PhishGuard AI",
+      "title": "Clarified PhishGuard AI pipeline architecture and schema direction",
+      "summary": "Refined the anti-phishing system around mailbox ingestion, evidence extraction, AI triage, decision routing, and audit logging.",
+      "details": [
+        "Defined the importance of a canonical schema across backend, GUI, logs, and manual .eml analysis.",
+        "Separated live mailbox routing behavior from simulated/manual file analysis behavior.",
+        "Prioritized richer evidence fields such as sender/reply-to domains, urgency language, sensitive-action indicators, and deep-analysis usage."
+      ]
+    },
+    {
+      "date": "2026-05-21",
+      "category": "PhishGuard AI",
+      "title": "Reviewed GUI integration and operational behavior for PhishGuard AI",
+      "summary": "Worked through GUI and backend alignment problems involving credentials, mailbox scanning behavior, evidence rendering, and action labeling.",
+      "details": [
+        "Planned clearer separation between email connection and API connection controls.",
+        "Reviewed local credential persistence expectations and display behavior.",
+        "Identified recurring scan issues around unread messages, UID tracking, and avoiding repeated analysis."
+      ]
+    },
+    {
+      "date": "2026-05-20",
+      "category": "PhishGuard AI",
+      "title": "Advanced live mailbox scanning and phishing triage workflow",
+      "summary": "Worked through Gmail IMAP scanning behavior, state tracking, and routing logic for the AI-assisted anti-phishing pipeline.",
+      "details": [
+        "Reviewed UID-based detection for new messages.",
+        "Focused on avoiding duplicate scans while preserving unread/read state expectations.",
+        "Continued moving the project toward demonstrable live mailbox behavior."
+      ]
+    },
+    {
+      "date": "2026-05-18",
+      "category": "Career Architecture",
+      "title": "Aligned project work with mid-tier cybersecurity positioning",
+      "summary": "Connected active project work to the goal of presenting as a security professional who can explain architecture, risk, and system behavior clearly.",
+      "details": [
+        "Focused on communication, architectural explanation, and evidence-backed project work as interview leverage.",
+        "Positioned AI security, application security, cloud architecture, and project documentation as connected signals.",
+        "Reinforced the strategy of building proof rather than relying on credentials alone."
+      ]
+    },
+    {
+      "date": "2026-05-16",
+      "category": "Professional Communication",
+      "title": "Tightened public technical writing standards",
+      "summary": "Reviewed the tone and formatting of public technical posts so the writing sounds authored, concise, and professionally credible.",
+      "details": [
+        "Removed formatting patterns that can make posts feel generated or over-polished.",
+        "Focused on concise architecture-oriented updates rather than generic AI enthusiasm.",
+        "Kept the writing grounded in what was built, reviewed, or learned."
+      ]
+    },
+    {
+      "date": "2026-05-10",
+      "category": "AEGIS RAG Security Lab",
+      "title": "Established AEGIS RAG as a portfolio-grade AI security lab",
+      "summary": "Set the direction for AEGIS RAG Security Lab as a structured AI security architecture project for interviews and professional review.",
+      "details": [
+        "Defined the lab around secure RAG systems, prompt injection mitigation, governance, monitoring, and adversarial testing.",
+        "Used a branch-per-phase workflow to preserve learning and implementation history.",
+        "Positioned the project as an architecture reasoning artifact, not just a code repo."
+      ]
+    },
+    {
+      "date": "2026-05-05",
+      "category": "Portfolio System",
+      "title": "Defined the personal site as an archive of competence",
+      "summary": "Clarified that the site should function as a personal blog and professional footprint that stores proof of work over time.",
+      "details": [
+        "Set the direction for a deliberate portfolio instead of a generic resume site.",
+        "Focused the architecture around projects, logs, technical decisions, and documented progression.",
+        "Prepared the site to become a long-term professional evidence layer."
+      ]
+    }
+  ]
+}
