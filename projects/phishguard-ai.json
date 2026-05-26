@@ -1,31 +1,59 @@
 {
   "id": "phishguard-ai",
   "title": "PhishGuard AI",
-  "status": "active",
+  "status": "archived",
   "category": "Email Security",
-  "summary": "AI-assisted anti-phishing pipeline with mailbox scanning, evidence extraction, triage scoring, routing, and audit logging.",
-  "stack": ["Python", "Gmail IMAP", "AI Triage", "JSONL Logging", "Evidence Extraction", "GUI", "Mailbox Routing"],
-  "architectureAreas": ["Email ingestion", "Evidence schema", "AI-assisted scoring", "Routing decisions", "Audit logging", "GUI integration"],
+  "summary": "Archived capstone project: an AI-assisted email phishing filter that analyzes messages, extracts security evidence, scores phishing likelihood, and routes outcomes into safe, review, or quarantine paths.",
+  "stack": [
+    "Python",
+    "Gmail IMAP",
+    "Manual .eml Analysis",
+    "GUI",
+    "AI Triage",
+    "Deep Analysis Agent",
+    "Decision Agent",
+    "Evidence Extraction",
+    "Review Queue",
+    "JSONL Audit Logging"
+  ],
+  "architectureAreas": [
+    "Email ingestion",
+    "Message parsing and normalization",
+    "Input-safety preprocessing",
+    "Evidence schema",
+    "AI-assisted phishing scoring",
+    "Deep analysis for suspicious mail",
+    "Final decision policy",
+    "Review and quarantine routing",
+    "Audit logging",
+    "GUI-to-backend integration"
+  ],
   "logs": [
     {
       "date": "2026-05-20",
       "status": "completed",
-      "title": "Integrated mailbox scanning and AI triage flow",
-      "details": "Built a pipeline for reading mailbox messages, extracting phishing indicators, scoring risk, and routing messages into safe, review, or quarantine paths."
+      "title": "Built mailbox scanning and AI triage flow",
+      "details": "Implemented a live IMAP runner that tracks new mailbox messages by UID, fetches messages without marking them read, normalizes email content, extracts phishing indicators, and sends the result into the AI triage flow."
     },
     {
       "date": "2026-05-21",
       "status": "completed",
-      "title": "Structured audit logging direction",
-      "details": "Defined the need for consistent JSONL audit records that capture sender, subject, score, decision, reasons, evidence, model usage, and routing outcome."
+      "title": "Added structured routing and audit behavior",
+      "details": "Mapped AI-assisted verdicts into SAFE, REVIEW, and QUARANTINE outcomes, with review/quarantine mailbox routing, persistent review queue support, and JSONL audit records for traceability."
     },
     {
       "date": "2026-05-25",
-      "status": "in progress",
-      "title": "GUI and backend schema alignment",
-      "details": "Working toward a cleaner shared schema between backend output, GUI display, logs, evidence panels, and manual .eml analysis behavior."
+      "status": "completed",
+      "title": "Aligned GUI, schema, and documentation for capstone delivery",
+      "details": "Documented the project architecture, run flow, configuration, scoring behavior, review queue, and manual .eml versus live mailbox workflows so the project could stand as a complete capstone artifact."
     }
   ],
-  "evidenceLinks": ["https://github.com/mcblast/email-phish-filter"],
-  "nextSteps": ["Finalize canonical schema", "Improve GUI evidence rendering", "Document live mailbox versus manual analysis behavior"]
+  "evidenceLinks": [
+    "https://github.com/mcblast/email-phish-filter"
+  ],
+  "archivedNotes": [
+    "Completed as a school capstone project by Team Sentinel AI Labs.",
+    "Preserved as portfolio evidence of applied email security, AI-assisted triage, audit logging, and GUI/backend integration work.",
+    "No longer treated as an active development project."
+  ]
 }
