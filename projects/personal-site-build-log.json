@@ -4,28 +4,51 @@
   "status": "active",
   "category": "Portfolio Architecture",
   "summary": "The site itself as a proof of workflow: branch discipline, content architecture, dynamic data loading, and iterative delivery.",
-  "stack": ["HTML", "CSS", "JavaScript", "Netlify", "GitHub", "External JSON Data"],
-  "architectureAreas": ["Static frontend", "GitHub-backed content layer", "Project modal UI", "Branch workflow", "Deployment hygiene"],
+  "stack": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Netlify",
+    "GitHub",
+    "External JSON Data",
+    "GitHub-backed Content Layer"
+  ],
+  "architectureAreas": [
+    "Static frontend",
+    "GitHub-backed content layer",
+    "Project modal UI",
+    "Progress log rendering",
+    "Branch workflow",
+    "Deployment hygiene"
+  ],
   "logs": [
     {
       "date": "2026-05-25",
       "status": "completed",
-      "title": "Moved site from placeholder to multipage portfolio",
-      "details": "Replaced the under-construction page with a deliberate portfolio structure for home, projects, progress log, operating system, and contact."
+      "title": "Created GitHub-backed project data layer",
+      "details": "Added the dedicated Personal_site_data repository structure with a project index and individual JSON project records so project content can be maintained separately from the static frontend code."
     },
     {
       "date": "2026-05-25",
       "status": "completed",
-      "title": "Added logo and professional contact routing",
-      "details": "Updated the visual identity, wired the dedicated email address, and removed inconsistent placeholder contact copy."
+      "title": "Built multipage portfolio archive branch",
+      "details": "Moved the site beyond the placeholder page on the portfolio-archive-v1 branch, adding the home, projects, progress log, operating system, and contact pages, shared styling, project rendering logic, and modal-based project case files."
     },
     {
-      "date": "2026-05-25",
-      "status": "in progress",
-      "title": "GitHub-backed project data architecture",
-      "details": "Separating project content from frontend code so project logs can be updated through a dedicated data repository without rebuilding the main site."
+      "date": "2026-05-26",
+      "status": "completed",
+      "title": "Fixed project modal behavior below sticky header",
+      "details": "Patched the project modal CSS and stylesheet cache behavior so project detail windows render below the sticky navigation header on desktop and mobile instead of overlapping the header."
     }
   ],
-  "evidenceLinks": ["https://github.com/mcblast/Personal_Site", "https://github.com/mcblast/Personal_site_data"],
-  "nextSteps": ["Refine project modal UX", "Add more detailed project logs", "Prepare content for public portfolio review"]
+  "evidenceLinks": [
+    "https://github.com/mcblast/Personal_Site/tree/portfolio-archive-v1",
+    "https://github.com/mcblast/Personal_site_data/commit/a34e6a2a9f190fb75476bd35fc6af5470a7428a7",
+    "https://github.com/mcblast/Personal_Site/commit/66cb7614025d5540b915e1cb9f32fb12b6c8638a"
+  ],
+  "nextSteps": [
+    "Refine project modal UX",
+    "Add more detailed project logs",
+    "Prepare content for public portfolio review"
+  ]
 }
