@@ -87,7 +87,7 @@
       "details": [
         "Framed public posts and repository work as long-term signal rather than short-term validation metrics.",
         "Reviewed how GitHub commits, project docs, and LinkedIn updates compound into credibility over time.",
-        "Separated visible progress from vanity engagement. Tiny but important."
+        "Separated visible progress from vanity engagement metrics."
       ]
     },
     {
@@ -109,7 +109,7 @@
       "details": [
         "Mapped the stack into domains: frontend, cloud services, storage, identity, lab delivery, and system communication.",
         "Focused the onboarding plan on producing practical understanding instead of passive reading.",
-        "Aligned the work with mentor expectations around clarity, initiative, and technical depth."
+        "Aligned the work with technical clarity, initiative, and documentation standards."
       ]
     },
     {
@@ -127,10 +127,10 @@
       "date": "2026-05-21",
       "category": "PhishGuard AI",
       "title": "Reviewed GUI integration and operational behavior for PhishGuard AI",
-      "summary": "Worked through GUI and backend alignment problems involving credentials, mailbox scanning behavior, evidence rendering, and action labeling.",
+      "summary": "Worked through GUI and backend alignment problems involving mailbox connection flow, scan behavior, evidence rendering, and action labeling.",
       "details": [
         "Planned clearer separation between email connection and API connection controls.",
-        "Reviewed local credential persistence expectations and display behavior.",
+        "Reviewed local configuration handling and display behavior.",
         "Identified recurring scan issues around unread messages, UID tracking, and avoiding repeated analysis."
       ]
     },
@@ -138,7 +138,7 @@
       "date": "2026-05-20",
       "category": "PhishGuard AI",
       "title": "Advanced live mailbox scanning and phishing triage workflow",
-      "summary": "Worked through Gmail IMAP scanning behavior, state tracking, and routing logic for the AI-assisted anti-phishing pipeline.",
+      "summary": "Worked through mailbox scanning behavior, state tracking, and routing logic for the AI-assisted anti-phishing pipeline.",
       "details": [
         "Reviewed UID-based detection for new messages.",
         "Focused on avoiding duplicate scans while preserving unread/read state expectations.",
