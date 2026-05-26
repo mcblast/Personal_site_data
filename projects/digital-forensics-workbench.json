@@ -1,0 +1,25 @@
+{
+  "id": "digital-forensics-workbench",
+  "title": "Digital Forensics Workbench",
+  "status": "archived",
+  "category": "Digital Forensics",
+  "summary": "Forensic analysis notes from VHD and IMG investigations using Autopsy, Sleuth Kit, Flare VM, evidence timelines, artifacts, and reporting discipline.",
+  "stack": ["Autopsy", "Sleuth Kit", "Flare VM", "VHD", "IMG", "Timeline Analysis", "Artifact Review"],
+  "architectureAreas": ["Evidence intake", "Artifact extraction", "Timeline reconstruction", "Report writing", "Tool workflow"],
+  "logs": [
+    {
+      "date": "2026-02-13",
+      "status": "completed",
+      "title": "Forensic image analysis workflow",
+      "details": "Worked through VHD and IMG forensic images using Flare VM and Autopsy with attention to evidence handling, artifact review, and investigative reporting."
+    },
+    {
+      "date": "2026-02-13",
+      "status": "completed",
+      "title": "USB extraction and operation analysis coursework",
+      "details": "Completed coursework-style forensic analysis involving disk images, timelines, and recovered artifacts for structured reporting."
+    }
+  ],
+  "evidenceLinks": [],
+  "nextSteps": ["Archive sanitized findings", "Convert reports into portfolio-safe summaries", "Add tool workflow notes"]
+}
