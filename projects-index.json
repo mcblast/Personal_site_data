@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "updated": "2026-05-25",
+  "updated": "2026-05-26",
   "projects": [
     {
       "id": "aegis-rag-security-lab",
@@ -14,8 +14,8 @@
       "id": "phishguard-ai",
       "title": "PhishGuard AI",
       "category": "Email Security",
-      "status": "active",
-      "summary": "AI-assisted anti-phishing pipeline with mailbox scanning, evidence extraction, triage scoring, routing, and audit logging.",
+      "status": "archived",
+      "summary": "Archived capstone project: an AI-assisted email phishing filter with manual .eml analysis, IMAP mailbox scanning, evidence extraction, triage scoring, review/quarantine routing, and JSONL audit logging.",
       "dataUrl": "projects/phishguard-ai.json"
     },
     {
