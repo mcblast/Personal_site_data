@@ -11,20 +11,28 @@
       "dataUrl": "projects/aegis-rag-security-lab.json"
     },
     {
-      "id": "phishguard-ai",
-      "title": "PhishGuard AI",
-      "category": "Email Security",
-      "status": "archived",
-      "summary": "Archived capstone project: an AI-assisted email phishing filter with manual .eml analysis, IMAP mailbox scanning, evidence extraction, triage scoring, review/quarantine routing, and JSONL audit logging.",
-      "dataUrl": "projects/phishguard-ai.json"
-    },
-    {
       "id": "ed-ready",
       "title": "Ed-ready Architecture Work",
       "category": "Cloud Architecture",
       "status": "active",
       "summary": "Cloud-backed educational lab infrastructure and documentation alignment work focused on onboarding, stack comprehension, and architecture clarity.",
       "dataUrl": "projects/ed-ready.json"
+    },
+    {
+      "id": "personal-site-build-log",
+      "title": "Personal Site Build Log",
+      "category": "Portfolio Architecture",
+      "status": "active",
+      "summary": "The site itself as a proof of workflow: branch discipline, content architecture, dynamic data loading, and iterative delivery.",
+      "dataUrl": "projects/personal-site-build-log.json"
+    },
+    {
+      "id": "phishguard-ai",
+      "title": "PhishGuard AI",
+      "category": "Email Security",
+      "status": "archived",
+      "summary": "Archived capstone project: an AI-assisted email phishing filter with manual .eml analysis, IMAP mailbox scanning, evidence extraction, triage scoring, review/quarantine routing, and JSONL audit logging.",
+      "dataUrl": "projects/phishguard-ai.json"
     },
     {
       "id": "reverse-engineering-malware-analysis",
@@ -49,14 +57,6 @@
       "status": "archived",
       "summary": "Forensic analysis notes from VHD and IMG investigations using Autopsy, Sleuth Kit, Flare VM, evidence timelines, artifacts, and reporting discipline.",
       "dataUrl": "projects/digital-forensics-workbench.json"
-    },
-    {
-      "id": "personal-site-build-log",
-      "title": "Personal Site Build Log",
-      "category": "Portfolio Architecture",
-      "status": "active",
-      "summary": "The site itself as a proof of workflow: branch discipline, content architecture, dynamic data loading, and iterative delivery.",
-      "dataUrl": "projects/personal-site-build-log.json"
     }
   ]
 }
