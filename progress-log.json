@@ -1,7 +1,18 @@
 {
   "version": "0.1.0",
-  "updated": "2026-05-25",
+  "updated": "2026-05-26",
   "entries": [
+    {
+      "date": "2026-05-26",
+      "category": "AEGIS RAG Security Lab",
+      "title": "Added OWASP LLM Top 10 mapping to the RAG security roadmap",
+      "summary": "Added a dedicated OWASP Top 10 for LLM Applications mapping document to the AEGIS RAG Security Lab so the project can track AI security risks, planned controls, and implementation status against a recognized industry framework.",
+      "details": [
+        "Created docs/owasp-llm-top-10-mapping.md in the AEGIS repository.",
+        "Mapped prompt injection, sensitive information disclosure, poisoning, excessive agency, system prompt leakage, vector and embedding weaknesses, misinformation, and unbounded consumption to project phases.",
+        "Kept the mapping conservative by separating implemented capability from planned controls instead of overstating coverage."
+      ]
+    },
     {
       "date": "2026-05-25",
       "category": "Portfolio Architecture",
