@@ -1,0 +1,31 @@
+{
+  "id": "phishguard-ai",
+  "title": "PhishGuard AI",
+  "status": "active",
+  "category": "Email Security",
+  "summary": "AI-assisted anti-phishing pipeline with mailbox scanning, evidence extraction, triage scoring, routing, and audit logging.",
+  "stack": ["Python", "Gmail IMAP", "AI Triage", "JSONL Logging", "Evidence Extraction", "GUI", "Mailbox Routing"],
+  "architectureAreas": ["Email ingestion", "Evidence schema", "AI-assisted scoring", "Routing decisions", "Audit logging", "GUI integration"],
+  "logs": [
+    {
+      "date": "2026-05-20",
+      "status": "completed",
+      "title": "Integrated mailbox scanning and AI triage flow",
+      "details": "Built a pipeline for reading mailbox messages, extracting phishing indicators, scoring risk, and routing messages into safe, review, or quarantine paths."
+    },
+    {
+      "date": "2026-05-21",
+      "status": "completed",
+      "title": "Structured audit logging direction",
+      "details": "Defined the need for consistent JSONL audit records that capture sender, subject, score, decision, reasons, evidence, model usage, and routing outcome."
+    },
+    {
+      "date": "2026-05-25",
+      "status": "in progress",
+      "title": "GUI and backend schema alignment",
+      "details": "Working toward a cleaner shared schema between backend output, GUI display, logs, evidence panels, and manual .eml analysis behavior."
+    }
+  ],
+  "evidenceLinks": ["https://github.com/mcblast/email-phish-filter"],
+  "nextSteps": ["Finalize canonical schema", "Improve GUI evidence rendering", "Document live mailbox versus manual analysis behavior"]
+}
