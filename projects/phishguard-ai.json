@@ -30,22 +30,22 @@
   ],
   "logs": [
     {
-      "date": "2026-05-20",
+      "date": "2026-02-07",
       "status": "completed",
-      "title": "Built mailbox scanning and AI triage flow",
-      "details": "Implemented a live IMAP runner that tracks new mailbox messages by UID, fetches messages without marking them read, normalizes email content, extracts phishing indicators, and sends the result into the AI triage flow."
+      "title": "Built initial AI triage, validation, and routing policy",
+      "details": "Implemented the first AI triage pipeline with strict JSON validation, safe fallback behavior, OpenAI client abstraction, and deterministic SAFE, REVIEW, and QUARANTINE routing policy."
     },
     {
-      "date": "2026-05-21",
+      "date": "2026-03-01",
       "status": "completed",
-      "title": "Added structured routing and audit behavior",
-      "details": "Mapped AI-assisted verdicts into SAFE, REVIEW, and QUARANTINE outcomes, with review/quarantine mailbox routing, persistent review queue support, and JSONL audit records for traceability."
+      "title": "Added live IMAP mailbox scanning and audit logging",
+      "details": "Merged the live mailbox runner with UID-based new message tracking, one-shot and polling modes, server-side review/quarantine routing, and structured JSONL audit records."
     },
     {
-      "date": "2026-05-25",
+      "date": "2026-03-28",
       "status": "completed",
-      "title": "Aligned GUI, schema, and documentation for capstone delivery",
-      "details": "Documented the project architecture, run flow, configuration, scoring behavior, review queue, and manual .eml versus live mailbox workflows so the project could stand as a complete capstone artifact."
+      "title": "Merged v0.6 capstone stabilization work",
+      "details": "Brought the larger v0.6 update into main, preserving the completed capstone state with expanded project structure, GUI/backend alignment, review queue behavior, and documentation support."
     }
   ],
   "evidenceLinks": [
