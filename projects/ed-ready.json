@@ -4,22 +4,43 @@
   "status": "active",
   "category": "Cloud Architecture",
   "summary": "Cloud-backed educational lab infrastructure and documentation alignment work focused on onboarding, stack comprehension, and architecture clarity.",
-  "stack": ["Nuxt", "AWS", "S3", "IAM", "Docker", "Guacamole", "Socket.IO"],
-  "architectureAreas": ["Cloud infrastructure", "Frontend architecture", "Access and identity", "Lab delivery", "Documentation alignment"],
+  "stack": [
+    "Nuxt",
+    "AWS",
+    "S3",
+    "IAM",
+    "Docker",
+    "Guacamole",
+    "Socket.IO"
+  ],
+  "architectureAreas": [
+    "Cloud infrastructure",
+    "Frontend architecture",
+    "Access and identity",
+    "Lab delivery",
+    "Documentation alignment"
+  ],
   "logs": [
     {
-      "date": "2026-05-25",
+      "date": "2026-05-18",
       "status": "completed",
-      "title": "Created 10-day onboarding architecture for the technical stack",
-      "details": "Mapped the technical stack into a structured onboarding path covering frontend, cloud services, storage, identity, lab access, and system communication flow."
+      "title": "Merged 10-day Ed-ready onboarding architecture package",
+      "details": "Added a structured onboarding package that maps the Ed-ready platform across Nuxt routing, stack responsibilities, frontend-to-backend flow, authentication, lab listing, launch flow, lab execution, backend session lifecycle, remote machine architecture, LTI, AWS, Pulumi, and production architecture."
     },
     {
-      "date": "2026-05-25",
+      "date": "2026-05-23",
       "status": "in progress",
-      "title": "Documentation audit",
-      "details": "Reviewing existing documentation against the actual codebase and updating documentation to account for codebase changes, implementation reality, and missing architectural context."
+      "title": "Opened documentation cleanup and accuracy audit",
+      "details": "Started a documentation-only cleanup pass to inventory the docs structure, compare documentation claims against the current codebase, update GitHub-readable indexes, clarify local setup around lab_platform, and separate current implementation reality from older architecture notes."
     }
   ],
-  "evidenceLinks": [],
-  "nextSteps": ["Continue documentation audit", "Map implementation details to architectural diagrams", "Convert findings into recruiter/client-readable project notes"]
+  "evidenceLinks": [
+    "https://github.com/hksomeJack/Ed-Ready/pull/42",
+    "https://github.com/hksomeJack/Ed-Ready/pull/44"
+  ],
+  "nextSteps": [
+    "Continue documentation audit",
+    "Map implementation details to architectural diagrams",
+    "Convert findings into recruiter/client-readable project notes"
+  ]
 }
