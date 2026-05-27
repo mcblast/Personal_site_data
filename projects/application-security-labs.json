@@ -20,6 +20,5 @@
       "details": "Documented SQL injection lab setup and used the lab instructions as a reference point for later application-security explanations."
     }
   ],
-  "evidenceLinks": [],
-  "nextSteps": ["Convert selected labs into professional writeups", "Add screenshots and sanitized evidence", "Separate attack mechanics from defensive lessons"]
+  "evidenceLinks": []
 }
