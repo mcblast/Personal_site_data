@@ -20,6 +20,5 @@
       "details": "Completed coursework-style forensic analysis involving disk images, timelines, and recovered artifacts for structured reporting."
     }
   ],
-  "evidenceLinks": [],
-  "nextSteps": ["Archive sanitized findings", "Convert reports into portfolio-safe summaries", "Add tool workflow notes"]
+  "evidenceLinks": []
 }
