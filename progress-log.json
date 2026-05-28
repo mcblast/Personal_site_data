@@ -1,7 +1,19 @@
 {
   "version": "0.1.0",
-  "updated": "2026-05-27",
+  "updated": "2026-05-28",
   "entries": [
+    {
+      "date": "2026-05-28",
+      "category": "AEGIS RAG Security Lab",
+      "title": "Implemented local GraphRAG retrieval for AEGIS RAG",
+      "summary": "Implemented Phase 01.75 by adding a local, deterministic GraphRAG retrieval layer beside the existing keyword and semantic retrieval modes, then merged it into main after reviewing the architecture and behavior.",
+      "details": [
+        "Added graph nodes, graph edges, concept aliases, deterministic graph construction, traversal-based retrieval, a GraphRAG pipeline, CLI runners, tests, and phase documentation.",
+        "Validated the branch-per-phase workflow by preserving the GraphRAG phase branch as an architectural checkpoint while integrating the completed work into main.",
+        "Learned that GraphRAG is not magic: in this implementation, retrieval quality depends heavily on the quality of the predefined concept map, aliases, relationship labels, traversal depth, and scoring rules.",
+        "Identified the next phase as threat modeling across keyword retrieval, semantic retrieval, and GraphRAG retrieval, with special attention to graph relationship poisoning, noisy traversal, and sensitive connected concepts."
+      ]
+    },
     {
       "date": "2026-05-27",
       "category": "AEGIS RAG Security Lab",
