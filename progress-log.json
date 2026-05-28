@@ -1,7 +1,18 @@
 {
   "version": "0.1.0",
-  "updated": "2026-05-26",
+  "updated": "2026-05-27",
   "entries": [
+    {
+      "date": "2026-05-27",
+      "category": "AEGIS RAG Security Lab",
+      "title": "Kept Phase 1.75 moving during a low-output day",
+      "summary": "Logged a controlled recovery day: light RAG progress, small house-move progress, and personal maintenance without turning a low-energy day into a full stall.",
+      "details": [
+        "Touched the RAG work enough to keep the project thread active.",
+        "Moved the house progression forward in a small but real way.",
+        "Chose recovery over forced late-night deep work so the next RAG session can start cleaner."
+      ]
+    },
     {
       "date": "2026-05-26",
       "category": "AEGIS RAG Security Lab",
