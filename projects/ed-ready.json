@@ -3,7 +3,7 @@
   "title": "Ed-ready Architecture Work",
   "status": "active",
   "category": "Cloud Architecture",
-  "summary": "Cloud-backed educational lab infrastructure and documentation alignment work focused on onboarding, stack comprehension, and architecture clarity.",
+  "summary": "Cloud-backed educational lab platform documentation work focused on onboarding, stack comprehension, architecture clarity, and careful review workflow.",
   "stack": [
     "Nuxt",
     "AWS",
@@ -11,14 +11,17 @@
     "IAM",
     "Docker",
     "Guacamole",
-    "Socket.IO"
+    "Socket.IO",
+    "Pulumi",
+    "Mermaid"
   ],
   "architectureAreas": [
     "Cloud infrastructure",
     "Frontend architecture",
     "Access and identity",
     "Lab delivery",
-    "Documentation alignment"
+    "Documentation alignment",
+    "Review workflow"
   ],
   "logs": [
     {
@@ -32,14 +35,33 @@
       "status": "in progress",
       "title": "Opened documentation cleanup and accuracy audit",
       "details": "Started a documentation-only cleanup pass to inventory the docs structure, compare documentation claims against the current codebase, update GitHub-readable indexes, clarify local setup around lab_platform, and separate current implementation reality from older architecture notes."
+    },
+    {
+      "date": "2026-05-29",
+      "status": "in progress",
+      "title": "Advanced documentation audit and lab session architecture mapping",
+      "details": "Reviewed top-level and main technical documentation, converted a generic Nuxt dependency note into repo-specific contributor guidance, added a current Mermaid-based lab session flow diagram, and marked older visual architecture material as partially accurate instead of treating it as source of truth."
+    },
+    {
+      "date": "2026-05-29",
+      "status": "approval pending",
+      "title": "Paused cloud quick start rewrite pending maintainer direction",
+      "details": "Identified that the cloud quick start should wait for the related deployment flow review to settle before being rewritten. The next pass is intentionally approval-gated so the documentation reflects the accepted path rather than stale setup assumptions."
     }
   ],
   "evidenceLinks": [
     "Private repository"
   ],
   "nextSteps": [
-    "Continue documentation audit",
-    "Map implementation details to architectural diagrams",
-    "Convert findings into recruiter/client-readable project notes"
+    "Wait for maintainer direction on the cloud deployment documentation source of truth",
+    "Continue documentation audit with non-blocked technical docs",
+    "Review app-specific docs and connect reliable material into the top-level documentation path",
+    "Add a setup verification checklist and safe-first-tasks list for new contributors",
+    "Convert approved architecture findings into recruiter/client-readable project notes"
+  ],
+  "blockers": [
+    "Cloud quick start rewrite depends on maintainer approval of the updated deployment path",
+    "Live environment validation requires limited access or maintainer-provided verification",
+    "Older visual diagrams should be retained until maintainers confirm whether to replace, rebuild, or archive them"
   ]
 }
