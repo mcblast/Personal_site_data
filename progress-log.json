@@ -11,8 +11,7 @@
         "Reviewed top-level documentation status and separated documents that can be updated now from documents that should wait for maintainer approval.",
         "Updated a Nuxt dependency hygiene note into repo-specific contributor guidance aligned with the current application package baseline.",
         "Added a Mermaid-based lab session flow diagram to reduce reliance on an older visual sketch while keeping the original diagram file intact.",
-        "Marked the cloud quick start rewrite as approval-gated because it should reflect the accepted deployment path, not stale setup assumptions.",
-        "Kept public project data sanitized by avoiding private names, private links, live environment details, and internal configuration specifics."
+        "Marked the cloud quick start rewrite as approval-gated because it should reflect the accepted deployment path, not stale setup assumptions."
       ]
     },
     {
