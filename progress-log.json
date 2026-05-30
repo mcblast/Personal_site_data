@@ -1,7 +1,20 @@
 {
   "version": "0.1.0",
-  "updated": "2026-05-28",
+  "updated": "2026-05-29",
   "entries": [
+    {
+      "date": "2026-05-29",
+      "category": "Ed-ready Architecture",
+      "title": "Advanced documentation audit and lab session flow mapping",
+      "summary": "Continued the Ed-ready documentation cleanup by turning rough architecture notes into clearer, reviewable documentation while keeping private implementation details out of public-facing project notes.",
+      "details": [
+        "Reviewed top-level documentation status and separated documents that can be updated now from documents that should wait for maintainer approval.",
+        "Updated a Nuxt dependency hygiene note into repo-specific contributor guidance aligned with the current application package baseline.",
+        "Added a Mermaid-based lab session flow diagram to reduce reliance on an older visual sketch while keeping the original diagram file intact.",
+        "Marked the cloud quick start rewrite as approval-gated because it should reflect the accepted deployment path, not stale setup assumptions.",
+        "Kept public project data sanitized by avoiding private names, private links, live environment details, and internal configuration specifics."
+      ]
+    },
     {
       "date": "2026-05-28",
       "category": "AEGIS RAG Security Lab",
@@ -10,8 +23,8 @@
       "details": [
         "Added graph nodes, graph edges, concept aliases, deterministic graph construction, traversal-based retrieval, a GraphRAG pipeline, CLI runners, tests, and phase documentation.",
         "Validated the branch-per-phase workflow by preserving the GraphRAG phase branch as an architectural checkpoint while integrating the completed work into main.",
-        "Learned that GraphRAG is not magic: in this implementation, retrieval quality depends heavily on the quality of the predefined concept map, aliases, relationship labels, traversal depth, and scoring rules.",
-        "Identified the next phase as threat modeling across keyword retrieval, semantic retrieval, and GraphRAG retrieval, with special attention to graph relationship poisoning, noisy traversal, and sensitive connected concepts."
+        "Documented that retrieval quality depends heavily on the quality of the predefined concept map, aliases, relationship labels, traversal depth, and scoring rules.",
+        "Identified the next phase as retrieval-layer architecture review across keyword retrieval, semantic retrieval, and GraphRAG retrieval."
       ]
     },
     {
@@ -28,11 +41,11 @@
     {
       "date": "2026-05-26",
       "category": "AEGIS RAG Security Lab",
-      "title": "Added OWASP LLM Top 10 mapping to the RAG security roadmap",
-      "summary": "Added a dedicated OWASP Top 10 for LLM Applications mapping document to the AEGIS RAG Security Lab so the project can track AI security risks, planned controls, and implementation status against a recognized industry framework.",
+      "title": "Added AI risk framework mapping to the RAG roadmap",
+      "summary": "Added a framework-mapping document to the AEGIS RAG Security Lab so the project can track AI system risks, planned controls, and implementation status against a recognized structure.",
       "details": [
         "Created docs/owasp-llm-top-10-mapping.md in the AEGIS repository.",
-        "Mapped prompt injection, sensitive information disclosure, poisoning, excessive agency, system prompt leakage, vector and embedding weaknesses, misinformation, and unbounded consumption to project phases.",
+        "Mapped major AI application risk areas to project phases.",
         "Kept the mapping conservative by separating implemented capability from planned controls instead of overstating coverage."
       ]
     },
@@ -83,18 +96,18 @@
     {
       "date": "2026-05-24",
       "category": "AEGIS RAG Security Lab",
-      "title": "Reviewed retrieval architecture from a security perspective",
-      "summary": "Analyzed how keyword retrieval, semantic retrieval, and GraphRAG change the risk profile of a RAG system and what security coverage remains incomplete.",
+      "title": "Reviewed retrieval architecture from a risk perspective",
+      "summary": "Analyzed how keyword retrieval, semantic retrieval, and GraphRAG change the risk profile of a RAG system and what coverage remains incomplete.",
       "details": [
-        "Compared retrieval layers by their different exposure to poisoning, prompt injection, trust boundary confusion, and context manipulation.",
+        "Compared retrieval layers by their different exposure to noisy inputs, trust boundary confusion, and context manipulation.",
         "Identified that multiple retrieval methods improve coverage but do not automatically solve authorization, provenance, evaluation, or output-control risks.",
-        "Prepared the next phase around retrieval-layer threat modeling and control design."
+        "Prepared the next phase around retrieval-layer control design."
       ]
     },
     {
       "date": "2026-05-24",
       "category": "AEGIS RAG Security Lab",
-      "title": "Prepared next implementation phase for secure RAG work",
+      "title": "Prepared next implementation phase for RAG architecture work",
       "summary": "Reviewed the current state of the RAG lab and prepared the direction for the next phase of implementation, study, and documentation.",
       "details": [
         "Kept the branch-per-phase workflow intact.",
@@ -136,46 +149,13 @@
       ]
     },
     {
-      "date": "2026-05-22",
-      "category": "PhishGuard AI",
-      "title": "Clarified PhishGuard AI pipeline architecture and schema direction",
-      "summary": "Refined the anti-phishing system around mailbox ingestion, evidence extraction, AI triage, decision routing, and audit logging.",
-      "details": [
-        "Defined the importance of a canonical schema across backend, GUI, logs, and manual .eml analysis.",
-        "Separated live mailbox routing behavior from simulated/manual file analysis behavior.",
-        "Prioritized richer evidence fields such as sender/reply-to domains, urgency language, sensitive-action indicators, and deep-analysis usage."
-      ]
-    },
-    {
-      "date": "2026-05-21",
-      "category": "PhishGuard AI",
-      "title": "Reviewed GUI integration and operational behavior for PhishGuard AI",
-      "summary": "Worked through GUI and backend alignment problems involving mailbox connection flow, scan behavior, evidence rendering, and action labeling.",
-      "details": [
-        "Planned clearer separation between email connection and API connection controls.",
-        "Reviewed local configuration handling and display behavior.",
-        "Identified recurring scan issues around unread messages, UID tracking, and avoiding repeated analysis."
-      ]
-    },
-    {
-      "date": "2026-05-20",
-      "category": "PhishGuard AI",
-      "title": "Advanced live mailbox scanning and phishing triage workflow",
-      "summary": "Worked through mailbox scanning behavior, state tracking, and routing logic for the AI-assisted anti-phishing pipeline.",
-      "details": [
-        "Reviewed UID-based detection for new messages.",
-        "Focused on avoiding duplicate scans while preserving unread/read state expectations.",
-        "Continued moving the project toward demonstrable live mailbox behavior."
-      ]
-    },
-    {
       "date": "2026-05-18",
       "category": "Career Architecture",
       "title": "Aligned project work with mid-tier cybersecurity positioning",
-      "summary": "Connected active project work to the goal of presenting as a security professional who can explain architecture, risk, and system behavior clearly.",
+      "summary": "Connected active project work to the goal of presenting as a technical professional who can explain architecture, risk, and system behavior clearly.",
       "details": [
         "Focused on communication, architectural explanation, and evidence-backed project work as interview leverage.",
-        "Positioned AI security, application security, cloud architecture, and project documentation as connected signals.",
+        "Positioned AI systems, application architecture, cloud architecture, and project documentation as connected signals.",
         "Reinforced the strategy of building proof rather than relying on credentials alone."
       ]
     },
@@ -193,10 +173,10 @@
     {
       "date": "2026-05-10",
       "category": "AEGIS RAG Security Lab",
-      "title": "Established AEGIS RAG as a portfolio-grade AI security lab",
-      "summary": "Set the direction for AEGIS RAG Security Lab as a structured AI security architecture project for interviews and professional review.",
+      "title": "Established AEGIS RAG as a portfolio-grade AI systems lab",
+      "summary": "Set the direction for AEGIS RAG Security Lab as a structured AI architecture project for interviews and professional review.",
       "details": [
-        "Defined the lab around secure RAG systems, prompt injection mitigation, governance, monitoring, and adversarial testing.",
+        "Defined the lab around RAG systems, governance, monitoring, and adversarial testing concepts.",
         "Used a branch-per-phase workflow to preserve learning and implementation history.",
         "Positioned the project as an architecture reasoning artifact, not just a code repo."
       ]
