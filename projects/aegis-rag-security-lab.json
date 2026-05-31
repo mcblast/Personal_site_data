@@ -3,24 +3,26 @@
   "title": "AEGIS RAG Security Lab",
   "status": "active",
   "category": "AI Security",
-  "summary": "Secure RAG architecture lab focused on retrieval design, prompt injection risk, governance, monitoring, and adversarial evaluation.",
+  "summary": "Secure RAG architecture lab focused on keyword retrieval, semantic retrieval, local GraphRAG, prompt injection risk, threat modeling, governance, monitoring, and adversarial evaluation.",
   "stack": [
     "Python",
     "RAG",
     "Keyword Retrieval",
     "Semantic Retrieval",
     "Local Embeddings",
-    "GraphRAG Planning",
-    "Security Controls",
-    "Evaluation Harness"
+    "Local GraphRAG",
+    "Knowledge Graphs",
+    "Threat Modeling",
+    "Pytest"
   ],
   "architectureAreas": [
     "Retrieval architecture",
-    "Keyword-vs-semantic comparison",
+    "Keyword-vs-semantic-vs-GraphRAG comparison",
+    "Concept and relationship mapping",
+    "Graph traversal behavior",
     "Prompt injection risk",
     "Trust boundaries",
-    "Evaluation",
-    "Monitoring",
+    "Threat modeling",
     "Governance"
   ],
   "logs": [
@@ -32,18 +34,33 @@
     },
     {
       "date": "2026-05-25",
-      "status": "in progress",
+      "status": "completed",
       "title": "Documented planned Phase 01.75 GraphRAG architecture",
       "details": "Outlined the next retrieval-architecture expansion: a local, deterministic GraphRAG path for comparing keyword retrieval, semantic retrieval, and relationship-aware retrieval before formal threat modeling begins."
+    },
+    {
+      "date": "2026-05-28",
+      "status": "completed",
+      "title": "Implemented and merged Phase 01.75 local GraphRAG retrieval",
+      "details": "Built a local GraphRAG layer with graph nodes, graph edges, concept aliases, deterministic graph construction, traversal-based retrieval, a GraphRAG pipeline, CLI runners, all-mode retrieval comparison, pytest coverage, and phase documentation. Merged the completed phase into main while preserving the phase branch as an architectural checkpoint."
+    },
+    {
+      "date": "2026-05-28",
+      "status": "completed",
+      "title": "Validated GraphRAG behavior locally",
+      "details": "Ran the full pytest suite successfully and exercised the GraphRAG CLI against a retrieval/confidential-source-material query. The output confirmed three loaded documents, three indexed chunks, twelve graph nodes, eleven graph edges, and explainable graph retrieval details."
     }
   ],
   "evidenceLinks": [
     "https://github.com/mcblast/aegis-rag-security-lab/pull/1",
-    "https://github.com/mcblast/aegis-rag-security-lab/commit/0706d18fd96dbbaeeb2f3f96d3912337378824a0"
+    "https://github.com/mcblast/aegis-rag-security-lab/pull/2",
+    "https://github.com/mcblast/aegis-rag-security-lab/commit/9379a58fdf6944866378c587ac6d40f1aad10bd6",
+    "https://github.com/mcblast/aegis-rag-security-lab/blob/main/docs/phase-01-75-local-graphrag.md"
   ],
   "nextSteps": [
-    "Document retrieval trust boundaries",
-    "Expand Phase 01.75 GraphRAG notes",
-    "Add security-focused evaluation cases"
+    "Begin Phase 02 threat modeling",
+    "Map trust boundaries across keyword, semantic, and GraphRAG retrieval",
+    "Build a risk register for retrieval manipulation, graph relationship poisoning, and sensitive connected concepts",
+    "Identify attack paths before adding defensive controls"
   ]
 }
