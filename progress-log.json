@@ -1,7 +1,27 @@
 {
   "version": "0.1.0",
-  "updated": "2026-05-29",
+  "updated": "2026-05-30",
   "entries": [
+    {
+      "date": "2026-05-30",
+      "category": "Ed-ready Security Review",
+      "title": "Completed PR #43 security hardening review and cleanup",
+      "summary": "Reviewed and cleaned up Ed-ready PR #43 from a security and deployment-readiness perspective, focusing on the AWS/Pulumi lab lifecycle boundary without exposing sensitive implementation details in public notes.",
+      "details": [
+        "Reviewed the PR around the trust boundary between the web application, API Gateway, Lambda authorizers, EC2 lifecycle functions, IAM roles, Secrets Manager, session cleanup, and deployment documentation.",
+        "Addressed the originally flagged authorizer token-caching concern by ensuring token validation uses the current secret source instead of relying on stale in-memory state.",
+        "Moved the lab-session authentication guard earlier in the request flow so unauthenticated requests cannot progress into lab lookup, token generation, or infrastructure side effects.",
+        "Reduced IAM blast radius by isolating the API authorizer onto a dedicated least-privilege role and removing unnecessary secret access from the broader lifecycle role.",
+        "Stopped exposing an incomplete AMI-capture route through API Gateway and tracked the proper design as follow-up work instead of over-expanding the PR.",
+        "Changed the EC2 launch path to fail closed when the approved machine-image allowlist is missing, preventing permissive behavior caused by deployment misconfiguration.",
+        "Adjusted API Gateway authorizer caching to a short window and updated the authorizer policy scope so valid cached decisions work across the intended protected lifecycle routes.",
+        "Removed raw API Gateway event logging from create/delete lifecycle functions to avoid writing sensitive request material into operational logs.",
+        "Documented a one-time deployment caveat for older untagged lab instances so the new managed-instance delete and cleanup controls can be introduced safely.",
+        "Opened follow-up issues for larger architectural work: one-role-per-Lambda IAM isolation, proper AMI-capture workflow design, and final authorizer cache/policy-scope strategy.",
+        "Updated the PR body so the resolved pre-auth infrastructure side-effect issue will close automatically when the PR merges.",
+        "Triggered a final automated review pass after cleanup; the review returned with no major issues. Remaining validation depends on live AWS/Pulumi access."
+      ]
+    },
     {
       "date": "2026-05-29",
       "category": "Ed-ready Architecture",
