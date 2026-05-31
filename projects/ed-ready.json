@@ -3,7 +3,7 @@
   "title": "Ed-ready Architecture Work",
   "status": "active",
   "category": "Cloud Architecture",
-  "summary": "Cloud-backed educational lab platform documentation work focused on onboarding, stack comprehension, architecture clarity, and careful review workflow.",
+  "summary": "Cloud-backed educational lab platform work focused on onboarding, stack comprehension, architecture clarity, documentation alignment, and security-conscious review of AWS/Pulumi deployment flows.",
   "stack": [
     "Nuxt",
     "AWS",
@@ -13,6 +13,9 @@
     "Guacamole",
     "Socket.IO",
     "Pulumi",
+    "API Gateway",
+    "Lambda",
+    "Secrets Manager",
     "Mermaid"
   ],
   "architectureAreas": [
@@ -20,8 +23,10 @@
     "Frontend architecture",
     "Access and identity",
     "Lab delivery",
+    "Infrastructure as code",
+    "Security review workflow",
     "Documentation alignment",
-    "Review workflow"
+    "Maintainer handoff"
   ],
   "logs": [
     {
@@ -47,21 +52,28 @@
       "status": "approval pending",
       "title": "Paused cloud quick start rewrite pending maintainer direction",
       "details": "Identified that the cloud quick start should wait for the related deployment flow review to settle before being rewritten. The next pass is intentionally approval-gated so the documentation reflects the accepted path rather than stale setup assumptions."
+    },
+    {
+      "date": "2026-05-30",
+      "status": "review clean pending live validation",
+      "title": "Reviewed and hardened PR #43 AWS/Pulumi security flow",
+      "details": "Completed a focused security review and cleanup pass on PR #43 around the AWS/Pulumi lab lifecycle boundary. Work included fixing stale token-validation behavior, enforcing authentication before infrastructure side effects, reducing authorizer IAM blast radius, removing exposure of an incomplete AMI-capture route, making the machine-image allowlist fail closed, adjusting short authorizer caching so it works safely across protected lifecycle routes, removing raw request logging from lifecycle Lambdas, documenting a one-time migration caveat for legacy untagged instances, and opening follow-up issues for larger architecture decisions. Final automated review returned with no major issues; live AWS validation remains pending."
     }
   ],
   "evidenceLinks": [
     "Private repository"
   ],
   "nextSteps": [
-    "Wait for maintainer direction on the cloud deployment documentation source of truth",
+    "Wait for maintainer review and live AWS/Pulumi validation of PR #43",
+    "Validate the updated lab lifecycle deployment path once limited AWS access or maintainer-run smoke tests are available",
+    "Rewrite the cloud quick start only after PR #43 is accepted as the deployment/security source of truth",
     "Continue documentation audit with non-blocked technical docs",
-    "Review app-specific docs and connect reliable material into the top-level documentation path",
-    "Add a setup verification checklist and safe-first-tasks list for new contributors",
+    "Track larger hardening follow-ups separately: dedicated IAM roles per Lambda, proper AMI-capture workflow design, and final authorizer cache strategy",
     "Convert approved architecture findings into recruiter/client-readable project notes"
   ],
   "blockers": [
+    "Live environment validation requires limited AWS access or maintainer-provided verification",
     "Cloud quick start rewrite depends on maintainer approval of the updated deployment path",
-    "Live environment validation requires limited access or maintainer-provided verification",
     "Older visual diagrams should be retained until maintainers confirm whether to replace, rebuild, or archive them"
   ]
 }
