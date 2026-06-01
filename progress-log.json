@@ -1,7 +1,19 @@
 {
   "version": "0.1.0",
-  "updated": "2026-05-31",
+  "updated": "2026-06-01",
   "entries": [
+    {
+      "date": "2026-06-01",
+      "category": "Ed-ready Smoke Testing",
+      "title": "Validated PR #43 local smoke-test readiness",
+      "summary": "Completed the local, non-cloud validation path for Ed-ready PR #43, confirming the session lifecycle tests, production build, infrastructure TypeScript compile, and Lambda deployment artifacts before live AWS testing.",
+      "details": [
+        "Ran the PR-specific create-session and delete-session route tests, confirming 27/27 passing for the lifecycle paths touched by the security hardening work.",
+        "Verified the application production build completes successfully and the infrastructure TypeScript project compiles without errors.",
+        "Built the Lambda deployment archives and confirmed the expected artifact paths are produced for the cloud deployment step.",
+        "Identified that remaining live cloud validation requires the managed AWS environment, CLI authentication, and appropriate read/deploy permissions before preview or deployment can be tested safely."
+      ]
+    },
     {
       "date": "2026-05-31",
       "category": "Ed-ready Architecture",
