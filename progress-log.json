@@ -1,7 +1,24 @@
 {
   "version": "0.1.0",
-  "updated": "2026-05-30",
+  "updated": "2026-05-31",
   "entries": [
+    {
+      "date": "2026-05-31",
+      "category": "Ed-ready Architecture",
+      "title": "Mapped Save Version abstraction across AMI and container lab paths",
+      "summary": "Reviewed the proposed creator-mode lab versioning workflow against AWS ECS, ECR, EC2, and AMI behavior, then refined the product abstraction into a more implementation-aware Save Version model.",
+      "details": [
+        "Clarified that the user-facing product model should stay close to the creator workflow: Creator Mode, Modify, Save Version, Test, then Publish.",
+        "Separated the product abstraction from the backend artifact strategy so the same Save Version action can branch by lab type instead of exposing infrastructure-specific language to users.",
+        "Mapped the EC2-backed lab path as a managed creator-mode instance that can be saved into a new AMI or AMI set, tagged, registered as a draft LabEnvironmentVersion, tested, and then published.",
+        "Mapped the container-backed lab path as a source or workspace change that builds a new immutable container image, pushes that image to ECR with a versioned tag or digest, registers a new ECS task definition revision, and records that as a LabEnvironmentVersion.",
+        "Validated that live ECS task capture is not the clean implementation model for container versioning. ECS Exec can support operational access, but the more standard release path is to build a container image, push it to ECR, and point a task definition revision at that image.",
+        "Learned that treating containers as reproducible artifacts is a better fit than treating running ECS tasks like mutable virtual machines that should be captured after manual edits.",
+        "Identified a practical MVP path: pull the existing image from ECR, edit and build locally or in a controlled workspace, push a new versioned image, then register or update the ECS task definition revision.",
+        "Kept the conclusion appropriately bounded: the abstraction appears sound, but the exact creator workflow for container-backed labs still needs implementation design, cost review, and live AWS validation.",
+        "Connected the design back to PR #43: the current pull request hardens the EC2 lifecycle boundary and leaves full Save Version workflow design as a follow-up layer rather than pretending it is already complete."
+      ]
+    },
     {
       "date": "2026-05-30",
       "category": "Ed-ready Security Review",
