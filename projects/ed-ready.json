@@ -1,26 +1,23 @@
 {
   "id": "ed-ready",
-  "title": "Ed-ready Architecture Work",
+  "title": "Educational Lab Platform Architecture Work",
   "status": "active",
   "category": "Cloud Architecture",
-  "summary": "Cloud-backed educational lab platform work focused on onboarding, stack comprehension, architecture clarity, documentation alignment, and security-conscious review of AWS/Pulumi deployment flows.",
+  "summary": "Private educational lab platform work focused on onboarding, stack comprehension, architecture clarity, documentation alignment, and security-conscious review of cloud deployment flows.",
   "stack": [
-    "Nuxt",
-    "AWS",
-    "S3",
-    "IAM",
-    "Docker",
-    "Guacamole",
-    "Socket.IO",
-    "Pulumi",
-    "API Gateway",
-    "Lambda",
-    "Secrets Manager",
-    "ECS",
-    "ECR",
-    "EC2",
-    "AMI",
-    "Mermaid"
+    "Frontend application architecture",
+    "Cloud infrastructure",
+    "Infrastructure as code",
+    "Containerization",
+    "Remote lab delivery",
+    "API routing",
+    "Serverless automation",
+    "Secrets management",
+    "Container orchestration",
+    "Container registry",
+    "Virtual machine provisioning",
+    "Machine-image versioning",
+    "Architecture diagrams"
   ],
   "architectureAreas": [
     "Cloud infrastructure",
@@ -38,20 +35,20 @@
     {
       "date": "2026-05-18",
       "status": "completed",
-      "title": "Merged 10-day Ed-ready onboarding architecture package",
-      "details": "Added a structured onboarding package that maps the Ed-ready platform across Nuxt routing, stack responsibilities, frontend-to-backend flow, authentication, lab listing, launch flow, lab execution, backend session lifecycle, remote machine architecture, LTI, AWS, Pulumi, and production architecture."
+      "title": "Merged 10-day onboarding architecture package",
+      "details": "Added a structured onboarding package that maps the platform across routing, stack responsibilities, frontend-to-backend flow, authentication, lab listing, launch flow, lab execution, backend session lifecycle, remote machine architecture, integrations, cloud infrastructure, infrastructure as code, and production architecture."
     },
     {
       "date": "2026-05-23",
       "status": "in progress",
       "title": "Opened documentation cleanup and accuracy audit",
-      "details": "Started a documentation-only cleanup pass to inventory the docs structure, compare documentation claims against the current codebase, update GitHub-readable indexes, clarify local setup around lab_platform, and separate current implementation reality from older architecture notes."
+      "details": "Started a documentation-only cleanup pass to inventory the docs structure, compare documentation claims against the current codebase, update GitHub-readable indexes, clarify local setup around the main application, and separate current implementation reality from older architecture notes."
     },
     {
       "date": "2026-05-29",
       "status": "in progress",
       "title": "Advanced documentation audit and lab session architecture mapping",
-      "details": "Reviewed top-level and main technical documentation, converted a generic Nuxt dependency note into repo-specific contributor guidance, added a current Mermaid-based lab session flow diagram, and marked older visual architecture material as partially accurate instead of treating it as source of truth."
+      "details": "Reviewed top-level and main technical documentation, converted a generic dependency note into repo-specific contributor guidance, added a current lab session flow diagram, and marked older visual architecture material as partially accurate instead of treating it as source of truth."
     },
     {
       "date": "2026-05-29",
@@ -62,30 +59,30 @@
     {
       "date": "2026-05-30",
       "status": "review clean pending live validation",
-      "title": "Reviewed and hardened PR #43 AWS/Pulumi security flow",
-      "details": "Completed a focused security review and cleanup pass on PR #43 around the AWS/Pulumi lab lifecycle boundary. Work included fixing stale token-validation behavior, enforcing authentication before infrastructure side effects, reducing authorizer IAM blast radius, removing exposure of an incomplete AMI-capture route, making the machine-image allowlist fail closed, adjusting short authorizer caching so it works safely across protected lifecycle routes, removing raw request logging from lifecycle Lambdas, documenting a one-time migration caveat for legacy untagged instances, and opening follow-up issues for larger architecture decisions. Final automated review returned with no major issues; live AWS validation remains pending."
+      "title": "Reviewed and hardened cloud lab lifecycle security flow",
+      "details": "Completed a focused security review and cleanup pass around the cloud lab lifecycle boundary. Work included improving token-validation behavior, enforcing authentication before infrastructure side effects, reducing authorization-role blast radius, removing exposure of an incomplete image-capture route, making approved image configuration fail closed, adjusting short authorization caching so it works safely across protected lifecycle routes, removing raw request logging from lifecycle automation, documenting a migration caveat for older unmanaged instances, and opening follow-up issues for larger architecture decisions. Final automated review returned with no major issues; live cloud validation remains pending."
     },
     {
       "date": "2026-05-31",
       "status": "design reasoning",
-      "title": "Mapped Creator Mode and Save Version across AMI and container-backed labs",
-      "details": "Reviewed the proposed creator-mode lab versioning model against AWS ECS, ECR, EC2, and AMI behavior. The current working abstraction is Creator Mode, Modify, Save Version, Test, then Publish. EC2-backed labs map naturally to managed creator instances that can be saved into new AMI-backed LabEnvironmentVersion records. Container-backed labs should use a reproducible artifact path: edit source or workspace files, build a new immutable image, push it to ECR with a versioned tag or digest, register a new ECS task definition revision, then record and test that version before publishing. This clarified that live ECS task capture is likely not the clean source-of-truth model; the safer implementation is to treat container images as built artifacts rather than mutable running environments. The conclusion is still intentionally bounded: the abstraction looks sound, while the exact container creator workflow needs implementation design, cost review, and live AWS validation."
+      "title": "Mapped creator-mode lab versioning across virtual-machine and container-backed labs",
+      "details": "Reviewed a proposed creator-mode lab versioning model against cloud container and virtual-machine behavior. The current working abstraction is to open an editable lab environment, modify it, save a draft version, test it, and publish after validation. Virtual-machine-backed labs map naturally to managed creator environments that can be saved into new machine-image-backed lab version records. Container-backed labs should use a reproducible artifact path: edit source or workspace files, build a new immutable image, push it to a container registry with a versioned identifier, register a new runtime definition, then record and test that version before publishing. This clarified that live running-container capture is likely not the clean source-of-truth model; the safer implementation is to treat container images as built artifacts rather than mutable running environments. The conclusion is still intentionally bounded: the abstraction looks sound, while the exact container creator workflow needs implementation design, cost review, and live cloud validation."
     }
   ],
   "evidenceLinks": [
     "Private repository"
   ],
   "nextSteps": [
-    "Wait for maintainer review and live AWS/Pulumi validation of PR #43",
-    "Validate the updated lab lifecycle deployment path once limited AWS access or maintainer-run smoke tests are available",
-    "Rewrite the cloud quick start only after PR #43 is accepted as the deployment/security source of truth",
+    "Wait for maintainer review and live cloud validation of the current security pull request",
+    "Validate the updated lab lifecycle deployment path once limited cloud access or maintainer-run smoke tests are available",
+    "Rewrite the cloud quick start only after the updated deployment and security path is accepted as the source of truth",
     "Continue documentation audit with non-blocked technical docs",
-    "Track larger hardening follow-ups separately: dedicated IAM roles per Lambda, proper AMI-capture workflow design, final authorizer cache strategy, and container-backed Save Version workflow design",
-    "Validate the practical MVP for container-backed labs: pull from ECR, edit/build locally or in a controlled workspace, push a versioned image, and register or update the ECS task definition revision",
+    "Track larger hardening follow-ups separately: stronger role isolation, proper machine-image capture workflow design, final authorization cache strategy, and container-backed lab versioning workflow design",
+    "Validate the practical MVP for container-backed labs: pull from a container registry, edit/build locally or in a controlled workspace, push a versioned image, and update the runtime definition",
     "Convert approved architecture findings into recruiter/client-readable project notes"
   ],
   "blockers": [
-    "Live environment validation requires limited AWS access or maintainer-provided verification",
+    "Live environment validation requires limited cloud access or maintainer-provided verification",
     "Cloud quick start rewrite depends on maintainer approval of the updated deployment path",
     "Older visual diagrams should be retained until maintainers confirm whether to replace, rebuild, or archive them",
     "Container-backed lab versioning still needs a confirmed implementation path before it should be documented as final behavior"
