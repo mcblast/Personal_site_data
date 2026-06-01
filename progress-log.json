@@ -5,38 +5,37 @@
     {
       "date": "2026-05-31",
       "category": "Ed-ready Architecture",
-      "title": "Mapped Save Version abstraction across AMI and container lab paths",
-      "summary": "Reviewed the proposed creator-mode lab versioning workflow against AWS ECS, ECR, EC2, and AMI behavior, then refined the product abstraction into a more implementation-aware Save Version model.",
+      "title": "Mapped a lab versioning workflow across virtual-machine and container paths",
+      "summary": "Reviewed a creator-facing lab versioning workflow against AWS container and virtual-machine patterns, then refined the abstraction into a clearer Save Version model without exposing private implementation details.",
       "details": [
-        "Clarified that the user-facing product model should stay close to the creator workflow: Creator Mode, Modify, Save Version, Test, then Publish.",
-        "Separated the product abstraction from the backend artifact strategy so the same Save Version action can branch by lab type instead of exposing infrastructure-specific language to users.",
-        "Mapped the EC2-backed lab path as a managed creator-mode instance that can be saved into a new AMI or AMI set, tagged, registered as a draft LabEnvironmentVersion, tested, and then published.",
-        "Mapped the container-backed lab path as a source or workspace change that builds a new immutable container image, pushes that image to ECR with a versioned tag or digest, registers a new ECS task definition revision, and records that as a LabEnvironmentVersion.",
-        "Validated that live ECS task capture is not the clean implementation model for container versioning. ECS Exec can support operational access, but the more standard release path is to build a container image, push it to ECR, and point a task definition revision at that image.",
-        "Learned that treating containers as reproducible artifacts is a better fit than treating running ECS tasks like mutable virtual machines that should be captured after manual edits.",
-        "Identified a practical MVP path: pull the existing image from ECR, edit and build locally or in a controlled workspace, push a new versioned image, then register or update the ECS task definition revision.",
-        "Kept the conclusion appropriately bounded: the abstraction appears sound, but the exact creator workflow for container-backed labs still needs implementation design, cost review, and live AWS validation.",
-        "Connected the design back to PR #43: the current pull request hardens the EC2 lifecycle boundary and leaves full Save Version workflow design as a follow-up layer rather than pretending it is already complete."
+        "Clarified that the public product model should stay close to the creator workflow: open an editable lab environment, make changes, save a draft version, test it, and publish only after validation.",
+        "Separated the user-facing action from the backend artifact strategy so the same workflow can support different lab types without exposing infrastructure-specific language to creators.",
+        "Mapped the virtual-machine-backed path as a managed creator environment that can be saved into a new machine-image artifact, registered as a draft lab version, tested, and later published.",
+        "Mapped the container-backed path as a source or workspace change that builds a new immutable container image, pushes it to a registry with a versioned identifier, registers a new runtime definition, and records that as a draft lab version.",
+        "Validated that capturing a live running container is not the clean source-of-truth model for container lab versioning. The safer pattern is to treat container images as reproducible build artifacts.",
+        "Identified a practical early implementation path: pull an existing container image, edit and build locally or in a controlled workspace, push a new versioned image, and update the runtime definition for testing.",
+        "Kept the conclusion bounded: the abstraction appears sound, but the exact creator workflow for container-backed labs still needs implementation design, cost review, and live cloud validation.",
+        "Connected the design back to the current security review work: the active pull request hardens the lab lifecycle boundary, while full lab-version saving remains follow-up architecture work rather than completed behavior."
       ]
     },
     {
       "date": "2026-05-30",
       "category": "Ed-ready Security Review",
       "title": "Completed PR #43 security hardening review and cleanup",
-      "summary": "Reviewed and cleaned up Ed-ready PR #43 from a security and deployment-readiness perspective, focusing on the AWS/Pulumi lab lifecycle boundary without exposing sensitive implementation details in public notes.",
+      "summary": "Reviewed and cleaned up Ed-ready PR #43 from a security and deployment-readiness perspective, focusing on the cloud lab lifecycle boundary without exposing sensitive implementation details in public notes.",
       "details": [
-        "Reviewed the PR around the trust boundary between the web application, API Gateway, Lambda authorizers, EC2 lifecycle functions, IAM roles, Secrets Manager, session cleanup, and deployment documentation.",
-        "Addressed the originally flagged authorizer token-caching concern by ensuring token validation uses the current secret source instead of relying on stale in-memory state.",
-        "Moved the lab-session authentication guard earlier in the request flow so unauthenticated requests cannot progress into lab lookup, token generation, or infrastructure side effects.",
-        "Reduced IAM blast radius by isolating the API authorizer onto a dedicated least-privilege role and removing unnecessary secret access from the broader lifecycle role.",
-        "Stopped exposing an incomplete AMI-capture route through API Gateway and tracked the proper design as follow-up work instead of over-expanding the PR.",
-        "Changed the EC2 launch path to fail closed when the approved machine-image allowlist is missing, preventing permissive behavior caused by deployment misconfiguration.",
-        "Adjusted API Gateway authorizer caching to a short window and updated the authorizer policy scope so valid cached decisions work across the intended protected lifecycle routes.",
-        "Removed raw API Gateway event logging from create/delete lifecycle functions to avoid writing sensitive request material into operational logs.",
-        "Documented a one-time deployment caveat for older untagged lab instances so the new managed-instance delete and cleanup controls can be introduced safely.",
-        "Opened follow-up issues for larger architectural work: one-role-per-Lambda IAM isolation, proper AMI-capture workflow design, and final authorizer cache/policy-scope strategy.",
+        "Reviewed the trust boundary between the web application, protected cloud endpoints, lifecycle automation, access roles, secrets handling, session cleanup, and deployment documentation.",
+        "Addressed a token-validation concern so authorization decisions are tied to the configured secret source rather than relying on stale process state.",
+        "Moved the session authentication guard earlier in the request flow so unauthenticated requests cannot progress into lookup, token generation, or infrastructure side effects.",
+        "Reduced access-role blast radius by separating authorization logic from broader lifecycle automation permissions.",
+        "Stopped exposing an incomplete machine-image capture path through the public lifecycle API and tracked the proper design as follow-up work instead of expanding the PR beyond review scope.",
+        "Changed the lab launch path to fail closed when the approved image configuration is missing, preventing permissive behavior caused by deployment misconfiguration.",
+        "Adjusted short authorization caching so valid decisions work across the intended protected lifecycle routes without creating a long-lived stale-cache risk.",
+        "Removed raw request logging from lifecycle functions to avoid writing sensitive request material into operational logs.",
+        "Documented a one-time deployment caveat for older unmanaged lab instances so the new cleanup controls can be introduced safely.",
+        "Opened follow-up issues for larger architecture work: stronger role isolation, proper machine-image capture workflow design, and final authorization cache strategy.",
         "Updated the PR body so the resolved pre-auth infrastructure side-effect issue will close automatically when the PR merges.",
-        "Triggered a final automated review pass after cleanup; the review returned with no major issues. Remaining validation depends on live AWS/Pulumi access."
+        "Triggered a final automated review pass after cleanup; the review returned with no major issues. Remaining validation depends on live cloud deployment testing."
       ]
     },
     {
@@ -46,8 +45,8 @@
       "summary": "Continued the Ed-ready documentation cleanup by turning rough architecture notes into clearer, reviewable documentation while keeping private implementation details out of public-facing project notes.",
       "details": [
         "Reviewed top-level documentation status and separated documents that can be updated now from documents that should wait for maintainer approval.",
-        "Updated a Nuxt dependency hygiene note into repo-specific contributor guidance aligned with the current application package baseline.",
-        "Added a Mermaid-based lab session flow diagram to reduce reliance on an older visual sketch while keeping the original diagram file intact.",
+        "Updated a frontend dependency hygiene note into repo-specific contributor guidance aligned with the current application package baseline.",
+        "Added a current lab session flow diagram to reduce reliance on an older visual sketch while keeping the original diagram file intact.",
         "Marked the cloud quick start rewrite as approval-gated because it should reflect the accepted deployment path, not stale setup assumptions."
       ]
     },
@@ -168,7 +167,7 @@
       "title": "Started deeper technical orientation around Ed-ready architecture",
       "summary": "Reviewed the technical stack and began organizing the system into learnable architecture domains for onboarding and future documentation work.",
       "details": [
-        "Identified Nuxt, AWS, S3, IAM, containers, Guacamole, Socket.IO, and frontend flow as key areas to understand.",
+        "Identified the frontend application, cloud services, access controls, containerization, remote lab delivery, realtime communication, and user flow as key areas to understand.",
         "Positioned the work as architecture comprehension and documentation alignment rather than surface-level repo cleanup.",
         "Prepared the path for a structured documentation audit."
       ]
