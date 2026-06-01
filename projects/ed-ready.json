@@ -16,6 +16,10 @@
     "API Gateway",
     "Lambda",
     "Secrets Manager",
+    "ECS",
+    "ECR",
+    "EC2",
+    "AMI",
     "Mermaid"
   ],
   "architectureAreas": [
@@ -26,7 +30,9 @@
     "Infrastructure as code",
     "Security review workflow",
     "Documentation alignment",
-    "Maintainer handoff"
+    "Maintainer handoff",
+    "Lab versioning workflow",
+    "Container artifact strategy"
   ],
   "logs": [
     {
@@ -58,6 +64,12 @@
       "status": "review clean pending live validation",
       "title": "Reviewed and hardened PR #43 AWS/Pulumi security flow",
       "details": "Completed a focused security review and cleanup pass on PR #43 around the AWS/Pulumi lab lifecycle boundary. Work included fixing stale token-validation behavior, enforcing authentication before infrastructure side effects, reducing authorizer IAM blast radius, removing exposure of an incomplete AMI-capture route, making the machine-image allowlist fail closed, adjusting short authorizer caching so it works safely across protected lifecycle routes, removing raw request logging from lifecycle Lambdas, documenting a one-time migration caveat for legacy untagged instances, and opening follow-up issues for larger architecture decisions. Final automated review returned with no major issues; live AWS validation remains pending."
+    },
+    {
+      "date": "2026-05-31",
+      "status": "design reasoning",
+      "title": "Mapped Creator Mode and Save Version across AMI and container-backed labs",
+      "details": "Reviewed the proposed creator-mode lab versioning model against AWS ECS, ECR, EC2, and AMI behavior. The current working abstraction is Creator Mode, Modify, Save Version, Test, then Publish. EC2-backed labs map naturally to managed creator instances that can be saved into new AMI-backed LabEnvironmentVersion records. Container-backed labs should use a reproducible artifact path: edit source or workspace files, build a new immutable image, push it to ECR with a versioned tag or digest, register a new ECS task definition revision, then record and test that version before publishing. This clarified that live ECS task capture is likely not the clean source-of-truth model; the safer implementation is to treat container images as built artifacts rather than mutable running environments. The conclusion is still intentionally bounded: the abstraction looks sound, while the exact container creator workflow needs implementation design, cost review, and live AWS validation."
     }
   ],
   "evidenceLinks": [
@@ -68,12 +80,14 @@
     "Validate the updated lab lifecycle deployment path once limited AWS access or maintainer-run smoke tests are available",
     "Rewrite the cloud quick start only after PR #43 is accepted as the deployment/security source of truth",
     "Continue documentation audit with non-blocked technical docs",
-    "Track larger hardening follow-ups separately: dedicated IAM roles per Lambda, proper AMI-capture workflow design, and final authorizer cache strategy",
+    "Track larger hardening follow-ups separately: dedicated IAM roles per Lambda, proper AMI-capture workflow design, final authorizer cache strategy, and container-backed Save Version workflow design",
+    "Validate the practical MVP for container-backed labs: pull from ECR, edit/build locally or in a controlled workspace, push a versioned image, and register or update the ECS task definition revision",
     "Convert approved architecture findings into recruiter/client-readable project notes"
   ],
   "blockers": [
     "Live environment validation requires limited AWS access or maintainer-provided verification",
     "Cloud quick start rewrite depends on maintainer approval of the updated deployment path",
-    "Older visual diagrams should be retained until maintainers confirm whether to replace, rebuild, or archive them"
+    "Older visual diagrams should be retained until maintainers confirm whether to replace, rebuild, or archive them",
+    "Container-backed lab versioning still needs a confirmed implementation path before it should be documented as final behavior"
   ]
 }
