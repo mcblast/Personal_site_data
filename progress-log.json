@@ -6,12 +6,12 @@
       "date": "2026-06-02",
       "category": "Ed-ready Cloud Smoke Testing",
       "title": "Advanced PR #43 AWS/Pulumi deployment validation",
-      "summary": "Set up an isolated AWS and Pulumi Cloud test path for Ed-ready PR #43, then validated the infrastructure preview before live deployment while keeping budget, cleanup, and blast-radius controls explicit.",
+      "summary": "Set up an isolated AWS and Pulumi Cloud test path for Ed-ready PR #43, then validated the infrastructure preview before live deployment while keeping budget, cleanup, and deployment-scope controls explicit.",
       "details": [
         "Configured AWS CLI, Pulumi CLI, Pulumi Cloud authentication, and a dedicated dev-kal stack to test outside the managed project account.",
         "Set stack-level AWS region, admin CIDR, lab-platform CIDR, and secret AMI allowlist configuration required by the hardened lifecycle deployment.",
         "Rebuilt Lambda deployment archives and ran pulumi preview --diff against the cloud infrastructure plan.",
-        "Identified and fixed a TypeScript module-resolution issue where config.json shadowed the Pulumi config loader, then re-ran preview successfully with a 90-resource deployment plan.",
+        "Identified and fixed a TypeScript module-resolution issue in the infrastructure entrypoint, then re-ran preview successfully with a 90-resource deployment plan.",
         "Paused before pulumi up to review AWS budget guardrails, cost drivers, and manual cleanup paths for NAT Gateway, RDS, ECS/Fargate, ECR, API Gateway, Lambda, and related networking resources."
       ]
     },
