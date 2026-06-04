@@ -1,7 +1,20 @@
 {
   "version": "0.1.0",
-  "updated": "2026-06-02",
+  "updated": "2026-06-03",
   "entries": [
+    {
+      "date": "2026-06-03",
+      "category": "Ed-ready Cloud Smoke Testing",
+      "title": "Completed live AWS smoke testing for PR #43",
+      "summary": "Completed an end-to-end cloud smoke test for Ed-ready PR #43, validating that the hardened lab lifecycle infrastructure can deploy, reject unauthorized access, create an authorized lab instance, verify lifecycle tags, terminate cleanly, and destroy cloud resources afterward.",
+      "details": [
+        "Worked through several real deployment blockers that only appeared during live infrastructure validation, including packaging, container image, database configuration, and duplicate network-rule issues.",
+        "Kept the fixes scoped to deployment correctness and cloud portability rather than weakening the security intent of the pull request.",
+        "Ran local build, type-checking, Python syntax, Lambda artifact, handler-alignment, and sensitive-string review checks before deploying to AWS.",
+        "Validated the protected API path by confirming unauthenticated requests are rejected and authenticated lifecycle requests can create and delete a test lab instance successfully.",
+        "Confirmed expected instance ownership and cleanup tags, then destroyed the deployed cloud stack and verified the test infrastructure was removed."
+      ]
+    },
     {
       "date": "2026-06-02",
       "category": "Ed-ready Cloud Smoke Testing",
