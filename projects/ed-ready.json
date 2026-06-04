@@ -52,39 +52,35 @@
     },
     {
       "date": "2026-05-29",
-      "status": "approval pending",
+      "status": "unblocked",
       "title": "Paused cloud quick start rewrite pending maintainer direction",
-      "details": "Identified that the cloud quick start should wait for the related deployment flow review to settle before being rewritten. The next pass is intentionally approval-gated so the documentation reflects the accepted path rather than stale setup assumptions."
+      "details": "The deployment/security validation path has now been smoke tested end-to-end, which unblocks continuing the documentation PR and revisiting the cloud quick start against the accepted hardened lifecycle flow instead of stale setup assumptions."
     },
     {
       "date": "2026-05-30",
-      "status": "review clean pending live validation",
+      "status": "validated and merge-ready",
       "title": "Reviewed and hardened cloud lab lifecycle security flow",
-      "details": "Completed a focused security review and cleanup pass around the cloud lab lifecycle boundary. Work included improving token-validation behavior, enforcing authentication before infrastructure side effects, reducing authorization-role blast radius, removing exposure of an incomplete image-capture route, making approved image configuration fail closed, adjusting short authorization caching so it works safely across protected lifecycle routes, removing raw request logging from lifecycle automation, documenting a migration caveat for older unmanaged instances, and opening follow-up issues for larger architecture decisions. Final automated review returned with no major issues; live cloud validation remains pending."
+      "details": "Completed a focused security review, cleanup, and live smoke-test pass around the cloud lab lifecycle boundary. The hardened flow now validates protected lifecycle API access, approved image allowlisting, browser-driven lab launch, managed instance tagging, expiry metadata, cleanup automation, and full stack teardown. Follow-up local developer-experience gaps were tracked separately so they do not block the P0 hardening merge."
     },
     {
       "date": "2026-05-31",
-      "status": "design reasoning",
+      "status": "design direction selected",
       "title": "Mapped creator-mode lab versioning across virtual-machine and container-backed labs",
-      "details": "Reviewed a proposed creator-mode lab versioning model against cloud container and virtual-machine behavior. The current working abstraction is to open an editable lab environment, modify it, save a draft version, test it, and publish after validation. Virtual-machine-backed labs map naturally to managed creator environments that can be saved into new machine-image-backed lab version records. Container-backed labs should use a reproducible artifact path: edit source or workspace files, build a new immutable image, push it to a container registry with a versioned identifier, register a new runtime definition, then record and test that version before publishing. This clarified that live running-container capture is likely not the clean source-of-truth model; the safer implementation is to treat container images as built artifacts rather than mutable running environments. The conclusion is still intentionally bounded: the abstraction looks sound, while the exact container creator workflow needs implementation design, cost review, and live cloud validation."
+      "details": "Reviewed a proposed creator-mode lab versioning model against cloud container and virtual-machine behavior. The current working abstraction is to open an editable lab environment, modify it, save a draft version, test it, and publish after validation. For the next implementation pass, the practical MVP direction is local Docker editing and building for container-backed labs: edit locally, build a reproducible image, push a versioned artifact, register the runtime definition, and test before publish. Hosted browser workspaces remain a later product direction rather than the immediate PR scope."
     }
   ],
   "evidenceLinks": [
     "Private repository"
   ],
   "nextSteps": [
-    "Wait for maintainer review and live cloud validation of the current security pull request",
-    "Validate the updated lab lifecycle deployment path once limited cloud access or maintainer-run smoke tests are available",
-    "Rewrite the cloud quick start only after the updated deployment and security path is accepted as the source of truth",
-    "Continue documentation audit with non-blocked technical docs",
-    "Track larger hardening follow-ups separately: stronger role isolation, proper machine-image capture workflow design, final authorization cache strategy, and container-backed lab versioning workflow design",
-    "Validate the practical MVP for container-backed labs: pull from a container registry, edit/build locally or in a controlled workspace, push a versioned image, and update the runtime definition",
-    "Convert approved architecture findings into recruiter/client-readable project notes"
+    "Merge the validated security hardening pull request when maintainer review is complete",
+    "Continue the documentation PR now that the hardened deployment path has been smoke tested",
+    "Start the Save State / Save Version implementation using local Docker editing and reproducible container-image artifacts as the MVP path",
+    "Keep larger hardening follow-ups tracked separately: stronger role isolation, proper machine-image capture workflow design, final authorization cache strategy, and local developer-experience cleanup"
   ],
   "blockers": [
-    "Live environment validation requires limited cloud access or maintainer-provided verification",
-    "Cloud quick start rewrite depends on maintainer approval of the updated deployment path",
+    "Cloud quick start rewrite still depends on maintainer acceptance of the validated deployment path",
     "Older visual diagrams should be retained until maintainers confirm whether to replace, rebuild, or archive them",
-    "Container-backed lab versioning still needs a confirmed implementation path before it should be documented as final behavior"
+    "Container-backed lab versioning still needs implementation validation before it should be documented as final behavior"
   ]
 }
