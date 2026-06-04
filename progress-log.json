@@ -1,7 +1,20 @@
 {
   "version": "0.1.0",
-  "updated": "2026-06-03",
+  "updated": "2026-06-04",
   "entries": [
+    {
+      "date": "2026-06-04",
+      "category": "Ed-ready Cloud Smoke Testing",
+      "title": "Closed the final PR #43 UI and cleanup validation loop",
+      "summary": "Completed the final Ed-ready PR #43 smoke-test pass by validating the browser-driven lab launch path, confirming managed instance tagging and scheduled cleanup behavior, then documenting the remaining local-dev gaps as follow-up work rather than blockers.",
+      "details": [
+        "Re-ran the isolated cloud stack after clearing test-environment cleanup friction from a prior destroy/recreate cycle.",
+        "Validated that the lifecycle API still rejects unauthenticated requests and fails closed when a request uses an unapproved lab image.",
+        "Wired the local lab application to the protected lifecycle API, created minimal local smoke-test data, and launched a lab through the actual Start Lab user flow.",
+        "Confirmed the launched lab instance carried the expected managed ownership, session, lab, and expiry metadata needed for lifecycle cleanup.",
+        "Manually expired the managed test instance, invoked the cleanup automation, confirmed termination, destroyed the cloud stack, and opened follow-up issues for local signup, seed-data, and desktop-connection developer-experience gaps."
+      ]
+    },
     {
       "date": "2026-06-03",
       "category": "Ed-ready Cloud Smoke Testing",
