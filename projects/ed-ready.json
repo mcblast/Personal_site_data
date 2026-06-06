@@ -3,7 +3,7 @@
   "title": "Educational Lab Platform Architecture Work",
   "status": "active",
   "category": "Cloud Architecture",
-  "summary": "Private educational lab platform work focused on onboarding, stack comprehension, architecture clarity, documentation alignment, and security-conscious review of cloud deployment flows.",
+  "summary": "Private educational lab platform work focused on onboarding, architecture clarity, cloud deployment validation, lab lifecycle security, and early container-backed lab versioning design.",
   "stack": [
     "Frontend application architecture",
     "Cloud infrastructure",
@@ -16,7 +16,7 @@
     "Container orchestration",
     "Container registry",
     "Virtual machine provisioning",
-    "Machine-image versioning",
+    "Lab versioning workflow",
     "Architecture diagrams"
   ],
   "architectureAreas": [
@@ -29,7 +29,8 @@
     "Documentation alignment",
     "Maintainer handoff",
     "Lab versioning workflow",
-    "Container artifact strategy"
+    "Container artifact strategy",
+    "Organization-scoped authorization"
   ],
   "logs": [
     {
@@ -51,35 +52,35 @@
       "details": "Reviewed top-level and main technical documentation, converted a generic dependency note into repo-specific contributor guidance, added a current lab session flow diagram, and marked older visual architecture material as partially accurate instead of treating it as source of truth."
     },
     {
-      "date": "2026-05-29",
-      "status": "unblocked",
-      "title": "Paused cloud quick start rewrite pending maintainer direction",
-      "details": "The deployment/security validation path has now been smoke tested end-to-end, which unblocks continuing the documentation PR and revisiting the cloud quick start against the accepted hardened lifecycle flow instead of stale setup assumptions."
-    },
-    {
-      "date": "2026-05-30",
-      "status": "validated and merge-ready",
-      "title": "Reviewed and hardened cloud lab lifecycle security flow",
-      "details": "Completed a focused security review, cleanup, and live smoke-test pass around the cloud lab lifecycle boundary. The hardened flow now validates protected lifecycle API access, approved image allowlisting, browser-driven lab launch, managed instance tagging, expiry metadata, cleanup automation, and full stack teardown. Follow-up local developer-experience gaps were tracked separately so they do not block the P0 hardening merge."
+      "date": "2026-06-04",
+      "status": "completed",
+      "title": "Merged cloud lab lifecycle hardening work",
+      "details": "Completed local and live cloud smoke testing for a hardened lab lifecycle flow, including protected lifecycle API behavior, approved image controls, browser-driven lab launch, managed instance metadata, scheduled cleanup behavior, and cloud stack teardown. Follow-up developer-experience gaps were tracked separately rather than treated as blockers."
     },
     {
       "date": "2026-05-31",
       "status": "design direction selected",
       "title": "Mapped creator-mode lab versioning across virtual-machine and container-backed labs",
-      "details": "Reviewed a proposed creator-mode lab versioning model against cloud container and virtual-machine behavior. The current working abstraction is to open an editable lab environment, modify it, save a draft version, test it, and publish after validation. For the next implementation pass, the practical MVP direction is local Docker editing and building for container-backed labs: edit locally, build a reproducible image, push a versioned artifact, register the runtime definition, and test before publish. Hosted browser workspaces remain a later product direction rather than the immediate PR scope."
+      "details": "Reviewed a proposed creator-mode lab versioning model against cloud container and virtual-machine behavior. The current working abstraction is to open an editable lab environment, modify it, save a draft version, test it, and publish after validation. For the next implementation pass, the practical MVP direction is local Docker editing and reproducible container-image artifacts."
+    },
+    {
+      "date": "2026-06-06",
+      "status": "in progress",
+      "title": "Started container-backed Save Version ownership foundation",
+      "details": "Started the backend foundation for container-backed lab versioning by adding managed image-registry support, version registration modeling, organization lab installation, ownership fields, creator-oriented access rules, and organization-scoped lab creation/read paths. The remaining authorization work is to finish sealing legacy edit and launch/session paths against the same org-scoped model."
     }
   ],
   "evidenceLinks": [
     "Private repository"
   ],
   "nextSteps": [
-    "Merge the validated security hardening pull request when maintainer review is complete",
-    "Continue the documentation PR now that the hardened deployment path has been smoke tested",
-    "Start the Save State / Save Version implementation using local Docker editing and reproducible container-image artifacts as the MVP path",
-    "Keep larger hardening follow-ups tracked separately: stronger role isolation, proper machine-image capture workflow design, final authorization cache strategy, and local developer-experience cleanup"
+    "Finish authorization cleanup for legacy edit and launch/session paths so creator, admin, member, and student access boundaries are explicit",
+    "Confirm the intended product model for public labs, organization adoption, private org labs, creator roles, and version selection",
+    "Continue container-backed Save Version implementation from immutable image registration toward runtime/task-definition revision registration",
+    "Continue documentation cleanup now that the cloud lifecycle hardening path has been validated and merged"
   ],
   "blockers": [
-    "Cloud quick start rewrite still depends on maintainer acceptance of the validated deployment path",
+    "Public lab adoption and creator compensation assumptions need product clarification before the UX model is finalized",
     "Older visual diagrams should be retained until maintainers confirm whether to replace, rebuild, or archive them",
     "Container-backed lab versioning still needs implementation validation before it should be documented as final behavior"
   ]
