@@ -4,6 +4,17 @@
   "entries": [
     {
       "date": "2026-06-06",
+      "category": "Portfolio UX + AEGIS RAG",
+      "title": "Polished site responsiveness and started RAG threat modeling",
+      "summary": "Made a small but useful site polish pass while starting the threat-modeling documentation path for the AEGIS RAG Security Lab.",
+      "details": [
+        "Tightened the project archive modal so mobile evidence links and lower detail sections stay contained instead of overflowing.",
+        "Cleaned up a desktop navigation hover rendering artifact that appeared against the terminal-style hero card.",
+        "Started threat-modeling documentation for AEGIS RAG, focusing on trust boundaries, retrieval-layer risks, and controls that need to be reasoned about before implementation is overstated."
+      ]
+    },
+    {
+      "date": "2026-06-06",
       "category": "Ed-ready Architecture",
       "title": "Started container-backed Save Version foundation",
       "summary": "Implemented the first backend foundation for container-backed lab versioning by separating lab ownership, organization adoption, immutable image registration, and role-scoped access into clearer platform boundaries.",
