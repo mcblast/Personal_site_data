@@ -1,7 +1,20 @@
 {
   "version": "0.1.0",
-  "updated": "2026-06-06",
+  "updated": "2026-06-08",
   "entries": [
+    {
+      "date": "2026-06-08",
+      "category": "AEGIS RAG + Tooling Diagnostics",
+      "title": "Completed RAG threat modeling and documented ChatGPT connector failure modes",
+      "summary": "Closed the AEGIS RAG Phase 02 threat-modeling pass while also troubleshooting a ChatGPT/GitHub connector truncation issue and validating a practical desktop-app workaround.",
+      "details": [
+        "Finished the Phase 02 threat-modeling work for AEGIS RAG by defining the initial AI security model around assets, actors, trust boundaries, retrieval-specific attack surfaces, attack paths, and control gaps.",
+        "Tested the GitHub connector truncation behavior with harmless repeated-text repro files and confirmed that long create_file/update_file arguments could be truncated before reaching GitHub while still reporting a successful commit.",
+        "Found that the ChatGPT Windows desktop app avoided the truncation behavior seen in the web flow, making it the practical workaround for longer repo-writing sessions.",
+        "Attempted to file the official ChatGPT bug report and found a second tooling defect: the report flow requested a HAR capture but did not accept HAR uploads.",
+        "Renamed the HAR capture with a .jpg extension so the uploader accepted it, then observed that the workaround broke the reporting AI tooling's file-type logic instead of producing a clean report path."
+      ]
+    },
     {
       "date": "2026-06-06",
       "category": "Portfolio UX + AEGIS RAG",
