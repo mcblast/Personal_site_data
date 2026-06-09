@@ -27,6 +27,12 @@
   ],
   "logs": [
     {
+      "date": "2026-06-08",
+      "status": "completed",
+      "title": "Completed Phase 02 threat modeling",
+      "details": "Completed the initial AI security threat model for the RAG lab after implementing keyword, semantic, and GraphRAG retrieval paths. The phase defined assets, actors, trust boundaries, retrieval-specific attack surfaces, attack paths, and control gaps before adversarial test cases or defensive controls are added."
+    },
+    {
       "date": "2026-05-24",
       "status": "completed",
       "title": "Merged Phase 01 and Phase 01.5 retrieval pipeline",
@@ -54,13 +60,14 @@
   "evidenceLinks": [
     "https://github.com/mcblast/aegis-rag-security-lab/pull/1",
     "https://github.com/mcblast/aegis-rag-security-lab/pull/2",
-    "https://github.com/mcblast/aegis-rag-security-lab/commit/9379a58fdf6944866378c587ac6d40f1aad10bd6",
+    "https://github.com/mcblast/aegis-rag-security-lab/commit/8c4e8250413abb5037f46a28f2ebeb03e929c78f",
+    "https://github.com/mcblast/aegis-rag-security-lab/commit/906f269f6096a248d7ce62838fab754fe1d917b4",
     "https://github.com/mcblast/aegis-rag-security-lab/blob/main/docs/phase-01-75-local-graphrag.md"
   ],
   "nextSteps": [
-    "Begin Phase 02 threat modeling",
-    "Map trust boundaries across keyword, semantic, and GraphRAG retrieval",
-    "Build a risk register for retrieval manipulation, graph relationship poisoning, and sensitive connected concepts",
-    "Identify attack paths before adding defensive controls"
+    "Review the Phase 02 documentation state after the connector truncation/debugging work",
+    "Convert threat-model findings into adversarial retrieval test cases",
+    "Define retrieval-layer controls for source trust, context handling, and graph relationship abuse",
+    "Keep implemented controls separate from planned controls in public documentation"
   ]
 }
