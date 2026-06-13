@@ -1,0 +1,17 @@
+{
+  "version": "0.1.0",
+  "updated": "2026-06-12",
+  "entries": [
+    {
+      "date": "2026-06-12",
+      "category": "Ed-ready Documentation",
+      "title": "Completed Ed-Ready documentation cleanup and audit",
+      "summary": "Finalized the Ed-Ready documentation cleanup by refreshing project-level docs, app-specific docs, and the dated documentation inventory before merging the cleanup PR.",
+      "details": [
+        "Refreshed the top-level docs and app-specific docs under lab_platform/docs.",
+        "Removed temporary cleanup/audit files after the pass was complete.",
+        "Squash-merged the documentation cleanup PR into main."
+      ]
+    }
+  ]
+}
