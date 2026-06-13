@@ -3,7 +3,7 @@
   "title": "Educational Lab Platform Architecture Work",
   "status": "active",
   "category": "Cloud Architecture",
-  "summary": "Private educational lab platform work focused on onboarding, architecture clarity, cloud deployment validation, lab lifecycle security, and early container-backed lab versioning design.",
+  "summary": "Private educational lab platform work focused on onboarding, architecture clarity, cloud deployment validation, lab lifecycle security, documentation alignment, and early container-backed lab versioning design.",
   "stack": [
     "Frontend application architecture",
     "Cloud infrastructure",
@@ -68,6 +68,12 @@
       "status": "in progress",
       "title": "Started container-backed Save Version ownership foundation",
       "details": "Started the backend foundation for container-backed lab versioning by adding managed image-registry support, version registration modeling, organization lab installation, ownership fields, creator-oriented access rules, and organization-scoped lab creation/read paths. The remaining authorization work is to finish sealing legacy edit and launch/session paths against the same org-scoped model."
+    },
+    {
+      "date": "2026-06-12",
+      "status": "completed",
+      "title": "Completed Ed-Ready documentation cleanup and audit",
+      "details": "Finalized project-level docs, refreshed app-specific docs under lab_platform/docs, dated the documentation inventory, removed temporary audit files, and squash-merged the documentation cleanup PR into main."
     }
   ],
   "evidenceLinks": [
@@ -77,7 +83,7 @@
     "Finish authorization cleanup for legacy edit and launch/session paths so creator, admin, member, and student access boundaries are explicit",
     "Confirm the intended product model for public labs, organization adoption, private org labs, creator roles, and version selection",
     "Continue container-backed Save Version implementation from immutable image registration toward runtime/task-definition revision registration",
-    "Continue documentation cleanup now that the cloud lifecycle hardening path has been validated and merged"
+    "Use the refreshed documentation baseline for future onboarding and architecture reviews"
   ],
   "blockers": [
     "Public lab adoption and creator compensation assumptions need product clarification before the UX model is finalized",
