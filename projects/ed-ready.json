@@ -40,12 +40,6 @@
       "details": "Added a structured onboarding package that maps the platform across routing, stack responsibilities, frontend-to-backend flow, authentication, lab listing, launch flow, lab execution, backend session lifecycle, remote machine architecture, integrations, cloud infrastructure, infrastructure as code, and production architecture."
     },
     {
-      "date": "2026-05-23",
-      "status": "in progress",
-      "title": "Opened documentation cleanup and accuracy audit",
-      "details": "Started a documentation-only cleanup pass to inventory the docs structure, compare documentation claims against the current codebase, update GitHub-readable indexes, clarify local setup around the main application, and separate current implementation reality from older architecture notes."
-    },
-    {
       "date": "2026-05-29",
       "status": "in progress",
       "title": "Advanced documentation audit and lab session architecture mapping",
