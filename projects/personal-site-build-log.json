@@ -45,6 +45,12 @@
       "status": "completed",
       "title": "Logged completed Ed-Ready documentation cleanup",
       "details": "Updated the portfolio data layer after completing and merging the Ed-Ready documentation cleanup/audit pass."
+    },
+    {
+      "date": "2026-06-15",
+      "status": "completed",
+      "title": "Delivered Embrace Pediatrics client site",
+      "details": "Delivered the final clinic website iteration, brought the production domain online, and set up the client's Google Maps business profile."
     }
   ],
   "evidenceLinks": [
