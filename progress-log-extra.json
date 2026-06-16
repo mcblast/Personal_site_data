@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "updated": "2026-06-12",
+  "updated": "2026-06-15",
   "entries": [
     {
       "date": "2026-06-12",
@@ -11,6 +11,17 @@
         "Refreshed the top-level docs and app-specific docs under lab_platform/docs.",
         "Removed temporary cleanup/audit files after the pass was complete.",
         "Squash-merged the documentation cleanup PR into main."
+      ]
+    },
+    {
+      "date": "2026-06-15",
+      "category": "Client Delivery",
+      "title": "Delivered Embrace Pediatrics client website",
+      "summary": "Delivered the final clinic website iteration, brought the production domain online, and set up the client's Google Maps business profile.",
+      "details": [
+        "Merged the final website iteration into production.",
+        "Connected the custom domain and verified HTTPS.",
+        "Set up the Google Maps business profile for the clinic."
       ]
     }
   ]
