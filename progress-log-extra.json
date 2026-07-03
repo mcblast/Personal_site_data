@@ -1,7 +1,22 @@
 {
   "version": "0.1.0",
-  "updated": "2026-06-15",
+  "updated": "2026-07-03",
   "entries": [
+    {
+      "date": "2026-07-03",
+      "category": "Ed-ready Architecture + Authorization",
+      "title": "Completed Ed-Ready PR 53 org-scoped lab ownership and Save Version foundation",
+      "summary": "Completed the major Ed-Ready PR 53 implementation and validation pass, expanding Save Version into a broader org-scoped authorization boundary across lab ownership, instruction management, deliverables, LTI launch, and immutable image-version registration.",
+      "details": [
+        "Turned the original Save Version ownership foundation into a wider organization-scoped platform boundary covering org-owned lab definitions, org lab installation, creator/admin/owner authoring roles, public-lab adoption compatibility, and legacy lab backfill safety.",
+        "Added creator/admin/owner-gated Save Version registration through POST /api/labs/version, resolving authorization from lab_definition.ownerOrgId rather than trusting caller-supplied organization IDs.",
+        "Validated managed ECR image references for immutable lab environment versions, including allowed tag and sha256 digest references, duplicate-version conflict handling, and fail-closed behavior when server image-repository configuration is missing.",
+        "Moved lab definitions, instructions, deliverables, and questions onto org-scoped routes while retiring legacy global mutation paths with 410 responses and preventing adopting orgs from editing upstream canonical lab content.",
+        "Hardened launch and LTI boundaries by requiring org slug, labId, and instructionId, binding LTI course/context data to an EdReady organization, and only auto-adopting active public labs and instructions through the current compatibility path.",
+        "Finished frontend integration for org-scoped create/edit/list flows, active/inactive management states, learner-safe content reads, deliverable controls, visibility publishing, and removal of sensitive form-state logging.",
+        "Completed automated validation across lab image/versioning, org-scoped lab definitions, instructions, deliverables, LTI deep-link and launch behavior, createsession, legacy backfill, production build, database generation, TypeScript compile, Pulumi preview, and manual smoke-test coverage."
+      ]
+    },
     {
       "date": "2026-06-12",
       "category": "Ed-ready Documentation",
