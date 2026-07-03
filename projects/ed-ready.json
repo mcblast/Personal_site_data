@@ -3,7 +3,7 @@
   "title": "Educational Lab Platform Architecture Work",
   "status": "active",
   "category": "Cloud Architecture",
-  "summary": "Private educational lab platform work focused on onboarding, architecture clarity, cloud deployment validation, lab lifecycle security, documentation alignment, and early container-backed lab versioning design.",
+  "summary": "Private educational lab platform work focused on onboarding, architecture clarity, cloud deployment validation, lab lifecycle security, documentation alignment, org-scoped authorization boundaries, LTI-compatible launch controls, and container-backed Save Version registration.",
   "stack": [
     "Frontend application architecture",
     "Cloud infrastructure",
@@ -17,6 +17,8 @@
     "Container registry",
     "Virtual machine provisioning",
     "Lab versioning workflow",
+    "Organization-scoped authorization",
+    "LTI launch controls",
     "Architecture diagrams"
   ],
   "architectureAreas": [
@@ -30,7 +32,10 @@
     "Maintainer handoff",
     "Lab versioning workflow",
     "Container artifact strategy",
-    "Organization-scoped authorization"
+    "Organization-scoped authorization",
+    "Org-owned lab catalog modeling",
+    "LTI course/context binding",
+    "Learner-safe launch boundaries"
   ],
   "logs": [
     {
@@ -62,20 +67,27 @@
       "status": "completed",
       "title": "Completed Ed-Ready documentation cleanup and audit",
       "details": "Finalized project-level docs, refreshed app-specific docs under lab_platform/docs, dated the documentation inventory, removed temporary audit files, and squash-merged the documentation cleanup PR into main."
+    },
+    {
+      "date": "2026-07-03",
+      "status": "completed foundation pass",
+      "title": "Completed PR 53 org-scoped lab ownership and Save Version foundation",
+      "details": "Completed a major implementation and validation pass for PR 53, expanding Save Version from a narrow version-registration feature into the wider org-scoped authorization boundary needed for org-owned lab definitions, instruction and deliverable management, learner-safe launch flows, LTI course/context binding, public-lab adoption compatibility, legacy lab backfill safety, and managed immutable ECR image-version registration."
     }
   ],
   "evidenceLinks": [
-    "Private repository"
+    "Private repository",
+    "Ed-Ready PR #53"
   ],
   "nextSteps": [
-    "Finish authorization cleanup for legacy edit and launch/session paths so creator, admin, member, and student access boundaries are explicit",
-    "Confirm the intended product model for public labs, organization adoption, private org labs, creator roles, and version selection",
-    "Continue container-backed Save Version implementation from immutable image registration toward runtime/task-definition revision registration",
-    "Use the refreshed documentation baseline for future onboarding and architecture reviews"
+    "Move LTI public lab adoption from the current compatibility path into the backend launch flow",
+    "Split lab-definition list scopes so authoring and launch/selectable flows are explicit",
+    "Model LTI learner access separately from general organization membership",
+    "Continue from backend Save Version registration toward the creator-facing Save Version button and runtime/task-definition revision registration"
   ],
   "blockers": [
-    "Public lab adoption and creator compensation assumptions need product clarification before the UX model is finalized",
-    "Older visual diagrams should be retained until maintainers confirm whether to replace, rebuild, or archive them",
-    "Container-backed lab versioning still needs implementation validation before it should be documented as final behavior"
+    "Divorced public-lab cloning and remix behavior remains a future architecture decision rather than part of the current foundation",
+    "The final LTI learner/course membership model still needs separation from regular organization membership",
+    "Frontend Save Version publishing workflow and runtime revision registration still need implementation validation before being documented as final product behavior"
   ]
 }
