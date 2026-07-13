@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "updated": "2026-05-26",
+  "updated": "2026-07-13",
   "projects": [
     {
       "id": "aegis-rag-security-lab",
@@ -17,6 +17,14 @@
       "status": "active",
       "summary": "Cloud-backed educational lab infrastructure and documentation alignment work focused on onboarding, stack comprehension, and architecture clarity.",
       "dataUrl": "projects/ed-ready.json"
+    },
+    {
+      "id": "ed-ready-course-ux",
+      "title": "Ed-Ready Course UX Architecture",
+      "category": "UI/UX Architecture",
+      "status": "active",
+      "summary": "Course-first product and interface architecture for an educational lab platform, with clear publishing, adoption, permissions, and learner workflows.",
+      "dataUrl": "projects/ed-ready-course-ux.json"
     },
     {
       "id": "personal-site-build-log",
