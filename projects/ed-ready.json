@@ -3,9 +3,12 @@
   "title": "Educational Lab Platform Architecture Work",
   "status": "active",
   "category": "Cloud Architecture",
-  "summary": "Private educational lab platform work focused on onboarding, architecture clarity, cloud deployment validation, lab lifecycle security, documentation alignment, org-scoped authorization boundaries, LTI-compatible launch controls, and container-backed Save Version registration.",
+  "summary": "Cloud-backed educational lab platform work spanning infrastructure, authorization, documentation, and an in-progress course-first UI/UX model for publishing, adoption, assignment, and learner access.",
   "stack": [
     "Frontend application architecture",
+    "Nuxt and Vue",
+    "TypeScript",
+    "UI/UX architecture",
     "Cloud infrastructure",
     "Infrastructure as code",
     "Containerization",
@@ -17,6 +20,7 @@
     "Container registry",
     "Virtual machine provisioning",
     "Lab versioning workflow",
+    "Course versioning",
     "Organization-scoped authorization",
     "LTI launch controls",
     "Architecture diagrams"
@@ -24,6 +28,11 @@
   "architectureAreas": [
     "Cloud infrastructure",
     "Frontend architecture",
+    "Course-first information architecture",
+    "Private and public content boundaries",
+    "Course adoption model",
+    "Role-based learner workflows",
+    "Publication validation",
     "Access and identity",
     "Lab delivery",
     "Infrastructure as code",
@@ -73,17 +82,24 @@
       "status": "completed foundation pass",
       "title": "Completed PR 53 org-scoped lab ownership and Save Version foundation",
       "details": "Completed a major implementation and validation pass for PR 53, expanding Save Version from a narrow version-registration feature into the wider org-scoped authorization boundary needed for org-owned lab definitions, instruction and deliverable management, learner-safe launch flows, LTI course/context binding, public-lab adoption compatibility, legacy lab backfill safety, and managed immutable ECR image-version registration."
+    },
+    {
+      "date": "2026-07-13",
+      "status": "in progress",
+      "title": "Expanded the course-first UX architecture",
+      "details": "Designed and implemented a clearer Ed-Ready flow across lab creation, course building, private and public publishing, organization adoption, assignment, and learner access. Local validation and interface refinement are still in progress."
     }
   ],
   "evidenceLinks": [
     "Private repository",
-    "Ed-Ready PR #53"
+    "Ed-Ready PR #53",
+    "Ed-Ready PR #60"
   ],
   "nextSteps": [
+    "Complete local validation of the course-first UI/UX work",
+    "Refine the interface from testing feedback",
     "Move LTI public lab adoption from the current compatibility path into the backend launch flow",
-    "Split lab-definition list scopes so authoring and launch/selectable flows are explicit",
-    "Model LTI learner access separately from general organization membership",
-    "Continue from backend Save Version registration toward the creator-facing Save Version button and runtime/task-definition revision registration"
+    "Continue from backend Save Version registration toward runtime revision integration"
   ],
   "blockers": [
     "Divorced public-lab cloning and remix behavior remains a future architecture decision rather than part of the current foundation",
