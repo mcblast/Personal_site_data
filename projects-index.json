@@ -15,16 +15,8 @@
       "title": "Ed-ready Architecture Work",
       "category": "Cloud Architecture",
       "status": "active",
-      "summary": "Cloud-backed educational lab infrastructure and documentation alignment work focused on onboarding, stack comprehension, and architecture clarity.",
+      "summary": "Educational lab platform architecture spanning cloud infrastructure, authorization, course-first UI/UX, publishing, adoption, and learner workflows.",
       "dataUrl": "projects/ed-ready.json"
-    },
-    {
-      "id": "ed-ready-course-ux",
-      "title": "Ed-Ready Course UX Architecture",
-      "category": "UI/UX Architecture",
-      "status": "active",
-      "summary": "Course-first product and interface architecture for an educational lab platform, with clear publishing, adoption, permissions, and learner workflows.",
-      "dataUrl": "projects/ed-ready-course-ux.json"
     },
     {
       "id": "personal-site-build-log",
